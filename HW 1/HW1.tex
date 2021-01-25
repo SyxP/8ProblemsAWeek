@@ -16,6 +16,37 @@
 
 \subsection*{Question 2}
 
+A circular disk of radius 1 in the plane $xy$ rolls without slipping along the x
+axis. The figure described by a point of the circumference of the disk is calIed a
+cycloid.
+
+\begin{itemize}
+     \item Obtain a parametrized curve $\alpha : \mathbb{R} \to \mathbb{R}^2$ the trace of which is the cycloid,
+and determine its singular points.
+     \item Compute the arc length of the cycloid corresponding to a complete rotation
+     of the disk.
+\end{itemize}
+
+Solution:
+
+Let us first parameterize the location of the centre of the 
+circle. When it has rotated by $\theta$, it will also have moved $\theta$ to the right.
+Hence, the position of the centre with respect to amount of rotation is $(\theta, 1)$.
+
+Now consider the positional vector from the centre to the marked point
+on the circumference. At $\theta = 0$, this is at $(0, -1)$. Then, for general $\theta$, 
+this is at $(-\sin\theta, -\cos\theta)$. Summing this, it shows that the parameterization $\alpha(\theta) = (\theta - \sin\theta, 1 - \cos\theta)$.
+
+We shall use the arc-length formula to yield
+
+\begin{align*}
+     \int_0^{2\pi} |\nabla\cdot \alpha(x)| \mathrm{d}x 
+     &= \int_0^{2\pi} \sqrt{(1-\cos x)^2 + (\sin x)^2} \mathrm{d}x  \\
+     &=\int_0^{2\pi} \sqrt{2 - 2\cos{x}} \mathrm{d}x \\
+     &= \left[-4\cos{\frac x2}\right]^{x = 2\pi}_{x = 0} \\
+     &= 8.
+\end{align*}
+
 \subsection*{Question 3}
 
 \subsection*{Question 4}
