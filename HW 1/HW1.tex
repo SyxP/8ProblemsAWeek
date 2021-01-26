@@ -53,6 +53,30 @@ We shall use the arc-length formula to yield
 
 \subsection*{Question 5}
 
+Let $\alpha : (-1, \infty) \to \mathbb{R}^2$ be given by
+\begin{equation*}
+     \alpha(t) = \left(\frac{3at}{1+t^3},\frac{3at^2}{1+t^3}\right)
+\end{equation*}
+
+Solution:
+
+(a) For $t = 0$, $\alpha$ is tangent to the $x$-axis.
+Computing the derivative, $\frac{\partial \alpha(t)}{\partial t} = \left(\frac{a(3 - 6t^3)}{(1+t^3)^2},\frac{3at(2-t^3)}{(1+t^3)^2}\right)$.
+Thus, $\alpha(0) = (0,0)$ and $\frac{\partial \alpha(0)}{\partial t} = (3a, 0)$. Thus, it is tangent to the $x$-axis.
+
+(b) As $t \to \infty$, $\alpha(t) = \frac{\partial \alpha(t)}{\partial t} = (0,0).$
+We take limits, $\lim_{t\to \infty}\alpha(t) = \left(\lim_{t\to \infty}\frac{3at}{1+t^3},\lim_{t\to\infty}\frac{3at^2}{1+t^3}\right) = (0,0).$
+Similarly, $\lim_{t \to \infty} \frac{\partial \alpha(t)}{\partial t} = 
+\left(\lim_{t\to \infty}\frac{a(3 - 6t^3)}{(1+t^3)^2},\lim_{t\to \infty}\frac{3at(2-t^3)}{(1+t^3)^2}\right) = (0,0).$
+
+(c)Take the curve with the opposite orientation. 
+Now, as $t \to -1$, the curve
+and its tangent approach the line $x + y + a = 0$.
+
+Let us compute $\lim_{t\to -1}\frac {\alpha(t)_y}{\alpha(t)_x} = \lim_{t\to -1} \frac 1t = -1.$
+Now, consider $$\lim_{t \to -1} \alpha(t)_y - (-1)\alpha(t)_x = \lim_{t\to -1} \frac{3a(t + t^2)}{1 + t^3} = -a.$$
+Thus, the tangent approaches the line $y = (-1)x + (-a)$, or the line $x + y + a = 0.$
+
 \subsection*{Question 10}
 
 
@@ -169,7 +193,8 @@ Suppose there exist $u'$ other than $u$ such that $u'\times v = w$. Then \begin{
      \Rightarrow &u' = u + kv, \quad k\in R.
 \end{align*}
 
-Therefore, the most general solution of $u\wedge v=w$ is \begin{equation*}
+Therefore, the most general solution of $u\wedge v=w$ is 
+\begin{equation*}
      u = \frac{v\wedge w}{||v||^2} + kv,\quad k\in R.
 \end{equation*}
 
