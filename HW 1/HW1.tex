@@ -79,7 +79,29 @@ Thus, the tangent approaches the line $y = (-1)x + (-a)$, or the line $x + y + a
 
 \subsection*{Question 10}
 
+Let $\alpha: I \to \mathbb{R}^3$ be a parametrized curve.
+Let $[a,b] \subseteq I$ and set $\alpha(a) = p, \alpha(b) = q.$
 
+(a) Show that, for any constant vector $v$, $|v| = 1$.
+     \begin{equation*}
+          (q-p)\cdot v = \int_a^b \alpha'(t)\cdot v \mathrm{d}t \leq \int_a^b |\alpha'(t)| \mathrm dt.
+     \end{equation*}
+
+\begin{proof}
+     By Fundamental Theorem of Calculus in 1-Dimension,
+     $$\int_a^b \alpha'(t)\cdot v\mathrm dt = (\alpha(b) - \alpha(a))\cdot v = (q-p)\cdot v.$$
+     Then, by H\"{o}lder's inequality, we have $|\alpha'(t)\cdot v| \leq |\alpha'(t)||v| = |\alpha'(t)|.$
+     Thus, $$\left |\int_a^b \alpha'(t)\cdot v\mathrm dt\right | \leq \int_a^b |\alpha'(t)\cdot v| \mathrm dt \leq \int_a^b |\alpha'(t)| \mathrm dt.$$
+\end{proof}
+
+(b) Set $$v = \frac{q-p}{|q-p|}$$ and show that
+$$|\alpha(b)-\alpha(a)| \leq \int_a^b |\alpha'(t)|\mathrm dt.$$
+That is, the curve of shortest length from $\alpha(a)$ to $\alpha(b)$
+is the straight line joining these points.
+
+\begin{corollary}
+     Use $(q-p)\cdot v = \frac{|q-p|^2}{|q-p|} = |q-p| = |\alpha(b) - \alpha(a)|$ with 10(a).
+\end{corollary}
 \section{Section 1.4}
 
 \subsection*{Question 10}
