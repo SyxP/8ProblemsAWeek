@@ -51,6 +51,26 @@ We shall use the arc-length formula to yield
 
 \subsection*{Question 4}
 
+Let $\alpha : (0, \pi) \to \mathbb R^2$ be given by
+$$\alpha(t) = \left ({\color{red}\sin t}, \cos t + \log \tan \frac t2\right )$$
+where $t$ is the angle that the $y$ axis makes with the vector $\alpha(t)$. The trace of $\alpha$ is
+called the tractrix. 
+Show that
+
+(a) $\alpha$ is a differentiable parameterized curve, regular except $t = \frac \pi2$.
+Consider the derivative, $\alpha'(t) = \left (\cos t, -\sin t + (\sin t)^{-1}\right )$
+This is differentiable except when $\cos t = 0$ and $-\sin t + (\sin t)^{-1} = 0$, 
+which occurs when $t = \frac \pi2$.
+
+(b) The length of the segment of the tangent of the tractrix 
+between the point of tangency and the $y$ axis is constantly equal to 1.
+
+Consider $\frac {\alpha'(t)_y}{\alpha'(t)_x} = \frac{-\sin t + (\sin t)^{-1}}{\cos t} = \frac {\cos t}{\sin t}.$ This is as $(\sin x)^2 + (\cos x)^2 = 1.$
+Thus, the line of the tanget at $\alpha(t)$ is $y - \cos t - \log \tan \frac t2 = \frac{\cos t}{\sin t}(x - \sin t).$
+This has $y$-intersect $(0,\log \tan \frac t2).$ Then, the distance is $(\sin t)^2 + (\cos t + \log \tan \frac t2 - \log \tan \frac t2)^2 = 1.$
+
+
+
 \subsection*{Question 5}
 
 Let $\alpha : (-1, \infty) \to \mathbb{R}^2$ be given by
