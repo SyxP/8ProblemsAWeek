@@ -49,6 +49,84 @@ We shall use the arc-length formula to yield
 
 \subsection*{Question 3}
 
+From errata: p.~8, Figure 1-8: The labelling is wrong: the points \(p\)
+and \(C\) should lie on the same half-line \(r\) through \(0\) as \(B\).
+
+\begin{quote}
+Let \(0A = 2a\) be the diameter of a circle \(S^1\) and \(0Y\) and
+\(AV\) be the tangents to \(S^1\) at \(0\) and \(A\), respectively. A
+half-line \(r\) is drawn from \(0\) which meets the circle \(S^1\) at
+\(C\) and the line \(AV\) at \(B\). On \(0B\) mark off the segment
+\(0p = CB\) (means both segments are equally long). If we rotate \(r\)
+about \(0\), the point \(p\) will describe a curve called \emph{cissoid
+of Diocles}. By taking \(0A\) as \(x\) axis and \(0Y\) as \(y\) axis,
+prove that
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  The trace of
+  \[ \alpha(t) = \left( \frac{2at^2}{1+t^2}, \frac{2at^3}{1+t^2} \right) ,\quad t\in\mathbb{R} \]
+  is the cissoid of Diocles (\(t = \tan\theta\), see Figure 1-8)
+\end{enumerate}
+\end{quote}
+
+\emph{Proof.}
+
+Let \(t = \tan\theta\) for \(\theta \in (-\pi,\pi)\), fix \(\theta\) and
+we show that \(p = \alpha(\tan\theta)\) satisfies the requirements when
+the half line \(r\) is of angle \(\theta\) from origin.
+
+First we check that \(p\) lies on the half-line, where
+\[ p = \left( \frac{2a\tan^2\theta}{1+\tan^2\theta}, \frac{2a\tan^3\theta}{1+\tan^2\theta} \right) \]
+and we see that \(\tan\arg p = \tan\theta\).
+
+Finally we check that the segments \(0p = CB\), we know the point \(C\)
+can be given by \((a,0) + (a \cos 2\theta, a \sin 2\theta)\) and \(B\)
+is given by \((2a, 2a\tan\theta )\). So \begin{align*}
+\left\lVert CB \right\rVert &= \left\lVert \left(  a - a\cos 2\theta, 2a\tan\theta - a\sin 2\theta  \right) \right\rVert \\
+\left\lVert CB \right\rVert^2 &=
+(a - a\cos2\theta)^2 + (2a\tan\theta - a\sin2\theta)^2 \\
+&= 4a^2\sin^2\theta\tan^2\theta \\
+\left\lVert p \right\rVert^2 &= \frac{4a^2(t^4 + t^6)}{(1+t^2)^2} \\
+&= \frac{4a^2 \tan^4\theta}{1+\tan^2\theta} \\
+&= 4a^2\sin^2\theta\tan^2\theta
+\end{align*}
+
+\begin{quote}
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The origin \((0,0)\) is a singular point of the cissoid.
+\end{enumerate}
+\end{quote}
+
+\emph{Proof.} At point \((0,0)\), \(t = 0\), we just need to check that
+\(\alpha'(0) = 0\). Now
+\[ \alpha'(t) = \left( \frac{4a t}{(1+t^2)^2}, \frac{2a t^2(t^2 + 3)}{(1+t^2)^2}  \right) \]
+which is \(0\) when \(t = 0\).
+
+\begin{quote}
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  As \(t\to\infty\), \(\alpha(t)\) approaches the line \(x = 2a\), and
+  \(\alpha'(t) \to (0, 2a)\) (book typo'd this I think). Thus as
+  \(t\to\infty\), the curve and its tangent approach the line
+  \(x = 2a\).
+\end{enumerate}
+\end{quote}
+
+\emph{Proof.} To show that the curve approaches the line \(x=2a\) we
+check that \[ \lim_{t\to\infty} \frac{2at^2}{1+t^2} = 2a. \] To verify
+the other claim we compute \[ \lim_{t\to\infty} \alpha'(t) = (0, 2a). \]
+
+
 \subsection*{Question 4}
 
 Let $\alpha : (0, \pi) \to \mathbb R^2$ be given by
