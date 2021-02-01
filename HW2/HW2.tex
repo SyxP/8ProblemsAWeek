@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+%% Insert Commands in Preface.tex
+\input{../Preface.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
+ 
+\smallskip
+\hrule
+\bigskip
+
+\section{Section 1.7}
+
+\subsection*{Question 6}
+
+\subsection*{Question 7}
+
+\subsection*{Question 8}
+
+\subsection*{Question 9}
+
+\section{Section 2.2}
+
+\subsection*{Question 4}
+Let $f(x, y, z) = z^2$. Prove that $0$ is not a regular value off and yet that $f^{-1}(0)$ is a regular surface.\\
+
+\textit{Solution.} Note that \begin{equation*}
+    df = (f_x,f_y,f_z) = (0,0,2z),
+\end{equation*}
+which is not surjective only when $z=0$. Hence, $(0,0,0)$ is a critical point and thus $f(0,0,0)=0$ is not a regular value.\\
+
+However, \begin{align*}
+    f^{-1}(0) &= \{(x,y,z)\in \mathbb{R}^3|z^2 = 0\}\\
+    &= \{(x,y,0)|x,y \in \mathbb{R}\} \\
+    &= \mathbb{R}^2 \times {0}.
+\end{align*}
+Hence, $f^{-1}(0)$ is homeomorphic to $\mathbb{R}^2$ and therefore is regular.
+
+\subsection*{Question 5}
+Let $P= \{(x,y,z)\in \mathbb{R}^3|x= y\}$ (a plane) and let $x:U \subset \mathbb{R}^2 \to \mathbb{R}^3$ be given by \begin{equation*}
+    x(u,v) = (u+v,u+v,uv),
+\end{equation*}
+ where $U=\{(u,v)\in \mathbb{R}^2|u>v\}$. Clearly, $x(U)\subset P$.Is $x$ a parametrization of $P$?\\
+ 
+\textit{Solution.} Yes, $x$ is a parametrization. Clearly, $x$ is differentiable in $U$ with \begin{equation*}
+    dx(u,v) =\begin{pmatrix}
+    1&1\\
+    1&1\\
+    u&v\\
+    \end{pmatrix}.
+\end{equation*}
+Note that for $(u,v)\in U$, we have $u>v$. Then $$\begin{array}{|cc|}
+     1&1  \\
+     u&v 
+\end{array} = v - u \neq 0.$$
+This implies $dx(u,v)$ is injective for all $(u,v)\in U$. Now let $(a,a,b)$ be any point in $x(U)$. Then \begin{align*}
+    &u+v=a,uv=b\\
+    \Rightarrow &u(a-u)=b\\
+    \Rightarrow &(u-\frac{a}{2})^2 = \frac{a^2}{4}-b.
+\end{align*}
+Notice that here one must have $\frac{a^2}{4}-b \geq 0$ as the equations $\begin{cases} u+v=a\\
+uv=b
+\end{cases}$ should have real solutions for $(a,a,b)\in x(U)$. Then given $u>v$, we have \begin{align*}
+    u = \frac{a}{2}+\sqrt{\frac{a^2}{4}-b}\\
+    v = \frac{a}{2}-\sqrt{\frac{a^2}{4}-b}.
+\end{align*}
+
+These are the unique $(u,v)$ solving $x(u,v)=(a,b)$, which shows $x$ is injective. Hence, by Prop.4 $x^{-1}$ must be continuous and we can conclude that $x$ is indeed a parametrization.
+
+\subsection*{Question 6}
+Give another proof of Prop. 1 by applying Prop. 2 to $h(x,y,z)=f(x,y)-z$.\\
+
+\textit{Solution.}
+Since $f$ is differentiable in $U$, for any point in $U \times \mathbb{R}$, we have \begin{equation*}
+    dh = (f_x,f_y,-1),
+\end{equation*}
+which is always surjective regardless of the value of $f_x,f_y$. Hence, any $z_0 \in f(U)$ with $f(x_0,y_0) = z_0$, we have \begin{equation*}
+    h(x_0,y_0,z_0) = f(x_0,y_0) - z_0 = 0,
+\end{equation*}
+being a regular value. This implies that \begin{align*}
+    h^-1(0) &= \{(x,y,z)\in U\times \mathbb{R}|h(x,y,z)=0\}\\
+    &=\{(x,y,z)\in U\times \mathbb{R}|f(x,y)=z\}\\
+    &=\{(x,y,f(x,y))|(x,y)\in U\}
+\end{align*}
+is a regular surface.
+\end{document}
