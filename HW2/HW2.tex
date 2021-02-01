@@ -18,6 +18,28 @@
 
 \subsection*{Question 7}
 
+Let $\alpha : \mathbb R \to \mathbb R^2$ be a plane curve
+defined in the entire real line $\mathbb R$. 
+Assume that $\alpha$ does not pass through
+the origin $O = (0,0)$ and that both limits
+$$\lim_{t\to -\infty} |\alpha(t)| = \lim_{t\to \infty} |\alpha(t)| = \infty.$$
+
+(a) Prove that there exists a point $t_0$ such that $|\alpha(t_0)| \leq |\alpha(t)|$ for all $t \in \mathbb R.$
+
+(b) Show, by an example, that the assertion in part a is false
+if one does not assume that both $\lim_{t \to -\infty}|\alpha(t)| = \infty$ and $\lim_{t \to \infty}|\alpha(t)| = \infty$.
+
+\textit{Solution.}
+
+(a) Consider $f : \mathbb{R} \to \mathbb{R}$ sending $t$ to $|\alpha(t)|.$
+Pick an arbitrary $t_1 \in \mathbb{R}$. We can find $a, b$ such that for all $t < a$,
+$f(t) > f(t_1)$ and for all $t > b$, we have $f(t) > f(t_1).$ Then, we can consider
+the restriction $f|_{[a,b]}$ to the compact interval $[a,b]$. By the Extreme Value Theorem, 
+we have that this takes a minimum on $[a, b]$, say at $t_0$. Then this $t_0$ satisfy the required properties
+as for $t \in [a,b]$, $|\alpha(t_0)| \leq |\alpha(t)|$, and for $t \not \in [a,b]$, $|\alpha(t)| > |\alpha(t_1)| \geq |\alpha(t_0)|$.
+
+(b) Consider $f(t) = (e^t, 0).$ Then, $\inf_t |\alpha(t)| = 0$, but this is non-zero for all $t$.
+
 \subsection*{Question 8}
 
 \subsection*{Question 9}
