@@ -7,7 +7,7 @@
 \thispagestyle{empty}
 
 {\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
- 
+
 \smallskip
 \hrule
 \bigskip
@@ -16,10 +16,35 @@
 
 \subsection*{Question 6}
 
+Let \(\alpha(s), s\in[0,l]\) be a closed convex plane curve positively oriented. The curve \[\beta(s) = \alpha(s) - rn(s)\]
+where \(r\) is a positive constant and \(n\) is a normal vector, is called a \emph{parallel} curve to \(\alpha\) (textbook figure is wrong, curve needs to be convex).
+Show that
+
+(a) \(\text{Length of }\beta = \text{length of }\alpha + 2\pi r\).
+
+\textit{Solution.}
+WLOG assume \(\alpha\) is parametrised by arc length, since \(\alpha\) is a plane curve the torsion is zero, so \(n' = -kt\).
+\begin{align*}
+    \beta'(s) &= \alpha'(s) - r n'(s) \\
+              &= \alpha'(s) - r(-k(s) t(s)) \\
+              &= (1+rk(s))t(s)
+\end{align*}
+now as \(\alpha\) is a simple closed curve with positive orientation, the rotation index is \(1\) and \(\int_0^l k(s)\ ds = 2\pi\), so
+\begin{align*}
+    \text{length of }\beta
+    &= \int_0^l \left\lvert \beta'(s) \right\rvert\ ds \\
+    &= \int_0^l 1 + r k(s) \ ds \\
+    &= l + 2\pi r.
+\end{align*}
+
+(b) \(A(\beta) = A(\alpha) + rl + \pi r^2\).
+
+(c) \(k_\beta(s) = k_\alpha(s)/(1+r)\).
+
 \subsection*{Question 7}
 
 Let $\alpha : \mathbb R \to \mathbb R^2$ be a plane curve
-defined in the entire real line $\mathbb R$. 
+defined in the entire real line $\mathbb R$.
 Assume that $\alpha$ does not pass through
 the origin $O = (0,0)$ and that both limits
 $$\lim_{t\to -\infty} |\alpha(t)| = \lim_{t\to \infty} |\alpha(t)| = \infty.$$
@@ -34,7 +59,7 @@ if one does not assume that both $\lim_{t \to -\infty}|\alpha(t)| = \infty$ and 
 (a) Consider $f : \mathbb{R} \to \mathbb{R}$ sending $t$ to $|\alpha(t)|.$
 Pick an arbitrary $t_1 \in \mathbb{R}$. We can find $a, b$ such that for all $t < a$,
 $f(t) > f(t_1)$ and for all $t > b$, we have $f(t) > f(t_1).$ Then, we can consider
-the restriction $f|_{[a,b]}$ to the compact interval $[a,b]$. By the Extreme Value Theorem, 
+the restriction $f|_{[a,b]}$ to the compact interval $[a,b]$. By the Extreme Value Theorem,
 we have that this takes a minimum on $[a, b]$, say at $t_0$. Then this $t_0$ satisfy the required properties
 as for $t \in [a,b]$, $|\alpha(t_0)| \leq |\alpha(t)|$, and for $t \not \in [a,b]$, $|\alpha(t)| > |\alpha(t_1)| \geq |\alpha(t_0)|$.
 
@@ -66,7 +91,7 @@ Let $P= \{(x,y,z)\in \mathbb{R}^3|x= y\}$ (a plane) and let $x:U \subset \mathbb
     x(u,v) = (u+v,u+v,uv),
 \end{equation*}
  where $U=\{(u,v)\in \mathbb{R}^2|u>v\}$. Clearly, $x(U)\subset P$.Is $x$ a parametrization of $P$?\\
- 
+
 \textit{Solution.} Yes, $x$ is a parametrization. Clearly, $x$ is differentiable in $U$ with \begin{equation*}
     \mathrm dx(u,v) =\begin{pmatrix}
     1&1\\
@@ -76,7 +101,7 @@ Let $P= \{(x,y,z)\in \mathbb{R}^3|x= y\}$ (a plane) and let $x:U \subset \mathbb
 \end{equation*}
 Note that for $(u,v)\in U$, we have $u>v$. Then $$\begin{array}{|cc|}
      1&1  \\
-     u&v 
+     u&v
 \end{array} = v - u \neq 0.$$
 This implies $\mathrm dx(u,v)$ is injective for all $(u,v)\in U$. Now let $(a,a,b)$ be any point in $x(U)$. Then \begin{align*}
     &u+v=a,uv=b\\
