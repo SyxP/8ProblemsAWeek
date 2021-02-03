@@ -39,7 +39,28 @@ now as \(\alpha\) is a simple closed curve with positive orientation, the rotati
 
 (b) \(A(\beta) = A(\alpha) + rl + \pi r^2\).
 
-(c) \(k_\beta(s) = k_\alpha(s)/(1+r)\).
+\textit{Solution.}
+For each \(t\in[0,r]\) let
+\[\beta_t(s) = \alpha(s) - t n(s)\]
+which is a curve that is also parallel to \(\alpha\) and lies between \(\alpha\) and \(\beta\).
+Then we have the expression
+\begin{align*}
+    A(\beta) - A(\alpha) &= \int_0^r \text{length of }\beta_t \ dt \\
+                         &= \int_0^r l + 2\pi t\ dt \\
+                         &= rl + \pi r^2
+\end{align*}
+as required.
+
+(c) \(k_\beta(s) = k_\alpha(s)/(1+r k_\alpha(s))\) (question typo'd).
+
+\textit{Solution.}
+We re-parametrise \(\beta\) by arc length.
+Let \[t(s) = \int_0^s \lvert \beta'(u) \rvert\ du\]
+and we have \(\frac{ds}{dt} = \frac{1}{\lvert \beta'(s)\rvert}\).
+Define \(\hat{\beta}\) such that \(\hat{\beta}(t(s)) = \beta(s)\), then
+\[\hat{\beta}''(l) = \frac{\alpha''(s)}{\lvert \beta'(s) \rvert} \]
+taking lengths we have
+\[\lvert \hat{\beta}''(l) \rvert = k_\beta(s) = \frac{k_\alpha(s)}{1 + rk_\alpha(s)}. \]
 
 \subsection*{Question 7}
 
