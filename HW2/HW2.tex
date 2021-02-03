@@ -110,6 +110,40 @@ similarly substitute the bounds and we have
 
 \subsection*{Question 9}
 
+We here define the notion of being ``inside'' a simple closed curve.
+
+\begin{definition}
+    A point $p$ is inside a simple closed curve $C$ if there
+    exists a ray from $p$ that intersects one point in $C$, say $q$,
+    such that $q \neq p$. Moreover, the tangent line at $q$
+    is not parallel to the ray from $p$ to $q$.
+\end{definition}
+
+\begin{theorem}
+    A set $K \subseteq \mathbb R^2$ is convex
+    if for any two points $p, q \in K$, the segment of 
+    straight line $\overline{pq}$ is contained in $K$. 
+
+    Let $C$ be a simple closed curve and $K$ be the points on or inside $C$.
+    Then if $C$ is convex so is $K$.
+\end{theorem}
+
+\begin{proof}
+    For each point $c \in C$, let $U_c$ be the closed half-plane, 
+    with the tangent line through $c$ being the boundary and
+    $C \subseteq U_c$. By convexity, we have $K \subseteq U = \cap_{c \in C} U_c.$
+    As the intersection of two convex sets is convex, and half-planes are convex,
+    it remains to show that $U \subseteq K$.
+
+    Consider a point $p \in \mathbb{R}^2 \setminus K$.
+    As $C$ is compact, we can pick $q \in C$ such that $d(p, q)$ is minimized.
+    Then, the tangent line at $q$ must be perpendicular to the ray from $p$ to $q$.
+    Suppose then that $p \in U_q$. Then the ray can not intersect another point of $C$,
+    as $C$ cannot intersect the line segment $\overline{pq}$ as $q$ is the closest point to $p$ on $C$,
+    and $C$ cannot intersect the ray after $q$, as all of $C$ lies in $U_q.$
+    By our definition, this implies that $p$ is inside the curve, which is a contradiction.
+\end{proof}
+
 \section{Section 2.2}
 
 \subsection*{Question 4}
