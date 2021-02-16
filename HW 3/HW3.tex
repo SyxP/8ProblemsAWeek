@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+%% Insert Commands in Preface.tex
+\input{../Preface.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
+ 
+\smallskip
+\hrule
+\bigskip
+
+\section{Section 2.3}
+
+\subsection*{Question 1}
+Let $S^2 = \{(x,y,z) \in \mathbb{R}^3:x^2+y^2+z^2= 1\}$ be the unit sphere and let $A:S^2 \to S^2$ be the (antipodal) map $A(x,y, z) = (-x, -y, -z)$. Prove that $A$ is a diffeomorphism.\\
+
+\textit{Solution.}
+Let $U = \{(x,y,\sqrt{1-x^2-y^2}):x^2+y^2<1\}$. Then we have \begin{align*}
+    A(U) &=\{-(x,y,\sqrt{1-x^2-y^2}):x^2+y^2<1\}\\
+    &=\{(x,y,-\sqrt{1-x^2-y^2}):x^2+y^2<1\}.
+\end{align*}
+
+Let $\phi(u,v) = (u,v,\sqrt{1-u^2-v^2})$ be a parametrization for $U$ and $\psi(u,v) = (u,v,-\sqrt{1-u^2-v^2})$ a parametrization for $A(U)$. Then \begin{align*}
+    \psi^{-1}\circ A\circ\phi(u,v) &= \psi^{-1}(A(\phi(u,v)))\\
+    &= \psi^{-1}(A((u,v,\sqrt{1-u^2-v^2})))\\
+    &= \psi^{-1}((-u,-v,-\sqrt{1-u^2-v^2}))\\
+    &= -(u,v).
+\end{align*}
+
+Therefore, $\psi^{-1}\circ A\circ\phi$ is a differentiable function from $U\to A(U)$. This shows that $A$ is a diffeomorphism.
+
+\subsection*{Question 3}
+
+\subsection*{Question 5}
+Let $S \subset R^3$ be a regular surface, and let $d:S\to R$ be given by $d(p)=|p- p_0|$, where $p \in S, p \in R^3, p_0 \notin S$; that is, $d$ is the distance from $p$ to a fixed point $p_0$, not in $S$. Prove that $d$ is differentiable.\\
+
+\textit{Solution.} We select $p\in S$, a open neighborhood $U$ of $p$ and a parametrization $\utilde{x}: V \to U$, where $V\subset R^2$ and $\utilde{x}(u_0,v_0) = p$. Let $p_0=(p_1,p_2,p_3)$. Then \begin{align*}
+    d^2\circ\utilde{x}(u,v) &= (x_1(u,v)-p_1)^2+(x_2(u,v)-p_2)^2+(x_3(u,v)-p_3)^2
+\end{align*}
+Since $x_i(u,v)$ are all smooth functions, $d^2\circ \utilde{x}$ should also be smooth. Since $p_0\notin S$, we have $d^2\circ\utilde{x}(S)\in (0,\infty)$. Note that $f(x)=\sqrt{x}$ is smooth on $(0,\infty)$. Therefore, $\sqrt{d^2\circ\utilde{x}} = d\circ\utilde{x}$ is also smooth. This shows that $d$ is differentiable.
+
+\subsection*{Question 7}
+
+\subsection*{Question 9}
+
+\section{Section 2.4}
+
+\subsection*{Question 15}
+Show that if all normals to a connected surface pass through a fixed point, the surface is contained in a sphere.\\
+
+\textit{Solution.} Let $p_0$ be such a fixed point. Then for any $p = \utilde{x}(u,v)\in S$, $p-p_0$ is normal to the tangent plane in $p$. That is \begin{equation*}
+    \utilde{x}_u\cdot (p-p_0) = \utilde{x}_v\cdot (p-p_0) = 0.
+\end{equation*}
+Then for the function $h(u,v)=(\utilde{x}(u,v)-p_0)\cdot(\utilde{x}(u,v)-p_0),$ we have \begin{align*}
+    &h_u = 2\utilde{x}_u\cdot (\utilde{x}-p_0) = 0\\
+    &h_v = 2\utilde{x}_v\cdot (\utilde{x}-p_0) = 0.
+\end{align*}
+This shows that $h$ is constant for any connected component of $S$. However, since $S$ is connected, $h$ should be constant on $S$, which implies that $S\subset {p\in R^3:||p-p_0|| = K}$ for some $K>0$.
+
+\subsection*{Question 17}
+
+\subsection*{Question 19}
+
+\subsection*{Question 21}
+
+\subsection*{Question 23}
+
+\subsection*{Question 25}
+Prove that if two regular curves $C_1$ and $C_2$ of a regular surface $S$ are tangent at a point $p \in S$, and if $\varphi: S \to S$ is a diffeomorphism, then $\varphi(C_1)$ and $\varphi(C_2)$ are regular curves which are tangent at $\varphi(p)$.\\
+
+\textit{Solution.} Let $U$ be a neighborhood of $p$ with parametrization $\utilde{x}(u,v)$. Let $\alpha_1(t)$ and $\alpha_2(t)$ be such that $\utilde{x}\circ \alpha_1$ and $\utilde{x}\circ \alpha_2$ are regular parametrizations of $C_1$ and $C_2$ with $\utilde{x}\circ \alpha_1(0) = \utilde{x}\circ \alpha_2(0)=p$. Then that $C_1$ and $C_2$ are tangent at $p$ implies that \begin{equation*}
+    \alpha_1'(0) = \alpha_2'(0).
+\end{equation*}
+Now let $V$ be a neighborhood of $\varphi(p)$ with parametrization $\utilde{y}(w,z)$ and $\psi =(\psi_1,\psi_2)= \utilde{y}^{-1}\circ \varphi\circ \utilde{x}$. Let $\beta_1(t)$ and $\beta_2(t)$ be such that $\utilde{y}\circ \beta_1$ and $\utilde{y}\circ \beta_2$ are regular parametrizations of $\varphi(C_1)$ and $\varphi(C_2)$ with $\utilde{y}\circ \beta_1(0) = \utilde{y}\circ \beta_2(0)=\varphi(p)$. Than
+\begin{align*}
+    \beta_1'(0) &= \left(\frac{\partial \psi_1}{\partial u}(\alpha_{1}(0))\alpha_{1u}'(0)+\frac{\partial \psi_1}{\partial v}(\alpha_{1}(0))\alpha_{1v}'(0),\frac{\partial \psi_2}{\partial u}(\alpha_{1}(0))\alpha_{1u}'(0)+\frac{\partial \psi_2}{\partial v}(\alpha_{1}(0))\alpha_{1v}'(0)\right)\\
+    &=\begin{pmatrix}
+    \frac{\partial \psi_1}{\partial u}(\alpha_{1}(0))&\frac{\partial \psi_1}{\partial v}(\alpha_{1}(0))\\
+    \frac{\partial \psi_2}{\partial u}(\alpha_{1}(0))&\frac{\partial \psi_2}{\partial v}(\alpha_{1}(0))
+    \end{pmatrix}\alpha_1'(0)\\
+    &= J_\psi(\alpha_1(0))\alpha_1'(0).
+\end{align*}
+Likewise, we have \begin{equation*}
+    \beta_2'(0) = J_\psi(\alpha_2(0))\alpha_2'(0).
+\end{equation*}
+However, since $\alpha_1(0)=\alpha_2(0) = \utilde{x}^{-1}(p)$ and $\alpha'_1(0)=\alpha'_2(0)$, we have $\beta'_1(0)=\beta'_2(0)$. This implies that $\varphi(C_1)$ and $\varphi(C_2)$ is tangent at $\varphi(p)$.
+\end{document}
