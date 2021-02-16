@@ -40,7 +40,7 @@ this is at $(-\sin\theta, -\cos\theta)$. Summing this, it shows that the paramet
 We shall use the arc-length formula to yield
 
 \begin{align*}
-     \int_0^{2\pi} |\nabla\cdot \alpha(x)| \mathrm{d}x 
+     \int_0^{2\pi} |\nabla\alpha(x)| \mathrm{d}x 
      &= \int_0^{2\pi} \sqrt{(1-\cos x)^2 + (\sin x)^2} \mathrm{d}x  \\
      &=\int_0^{2\pi} \sqrt{2 - 2\cos{x}} \mathrm{d}x \\
      &= \left[-4\cos{\frac x2}\right]^{x = 2\pi}_{x = 0} \\
@@ -219,6 +219,29 @@ and conclude that \begin{equation*}
 \end{equation*}
 Since the last determinant has the same sign as the basis $\{u,v\}$, we can say that $A$ is positive or negative according to whether the orientation of $\{u,v\}$ is positive or negative. This is called the \textit{oriented area} in $R^2$.\\\\
 Solution:
+
+
+We first observe that
+  \begin{equation*}
+     \begin{pmatrix}
+     u \cdot u & u \cdot v\\
+     v \cdot u & v \cdot v
+     \end{pmatrix} =
+     \begin{pmatrix}
+          u_1^2 + u_2^2 & u_1v_1 + u_2v_2\\
+          v_1u_1 + v_2u_2 & v_1^2 + v^2_2
+     \end{pmatrix} = 
+     \begin{pmatrix}
+     u_1 & u_2\\
+     v_1 & v_2
+     \end{pmatrix}
+     \begin{pmatrix}
+     u_1 & v_1\\
+     u_2 & v_2
+     \end{pmatrix}
+ \end{equation*}
+
+ The identity then holds as, 
 \begin{align*}
     A^2 &= (u \wedge v) \cdot (u \wedge v)\\
     &= u \cdot (v \wedge (u \wedge v))\\
