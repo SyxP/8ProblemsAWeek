@@ -34,6 +34,20 @@ Therefore, $\psi^{-1}\circ A\circ\phi$ is a differentiable function from $U\to A
 
 \subsection*{Question 3}
 
+Show that the paraboloid $z = x^2 + y^2$
+is diffeomorphic to the plane.
+
+\textit{Solution.}  Luckily, we can pick one local chart each
+to cover the paraboloid $U$ and the plane $V$. For the paraboloid, we can have $(U, f^{-1})$ where 
+$f: (x, y) \to (x, y, x^2 + y^2)$ and for the plane, we can choose our local chart to be $(V, g^{-1})$ where 
+to be $g: (x, y) \to (x, y).$
+
+Let us now define the diffeomorphism 
+$\pi : \mathrm{Im} f \to \mathrm{Im} g.$
+Let $\pi (a, b, c) = (a, b).$ Then, $g^{-1}\circ\pi \circ f = \mathrm{id}_{\mathbb R^2}.$ Thus, $\pi$ is smooth.
+Then, $\pi^{-1}$ is well-defined, as we the fiber over the point $(a, b)$ must be of the form $(a, b, a^2 + b^2).$
+$\pi^{-1}$ is smooth as $f^{-1} \circ \pi^{-1} \circ g = \mathrm{Id}_{\mathbb R^2}.$ Thus, $\pi$ is a diffeomorphism.
+
 \subsection*{Question 5}
 Let $S \subset R^3$ be a regular surface, and let $d:S\to R$ be given by $d(p)=|p- p_0|$, where $p \in S, p \in R^3, p_0 \notin S$; that is, $d$ is the distance from $p$ to a fixed point $p_0$, not in $S$. Prove that $d$ is differentiable.\\
 
