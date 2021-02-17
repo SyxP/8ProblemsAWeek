@@ -43,7 +43,7 @@ $f: (x, y) \to (x, y, x^2 + y^2)$ and for the plane, we can choose our local cha
 to be $g: (x, y) \to (x, y).$
 
 Let us now define the diffeomorphism 
-$\pi : \mathrm{Im} f \to \mathrm{Im} g.$
+$\pi : U \to V.$
 Let $\pi (a, b, c) = (a, b).$ Then, $g^{-1}\circ\pi \circ f = \mathrm{id}_{\mathbb R^2}.$ Thus, $\pi$ is smooth.
 Then, $\pi^{-1}$ is well-defined, as we the fiber over the point $(a, b)$ must be of the form $(a, b, a^2 + b^2).$
 $\pi^{-1}$ is smooth as $f^{-1} \circ \pi^{-1} \circ g = \mathrm{Id}_{\mathbb R^2}.$ Thus, $\pi$ is a diffeomorphism.
@@ -57,6 +57,28 @@ Let $S \subset R^3$ be a regular surface, and let $d:S\to R$ be given by $d(p)=|
 Since $x_i(u,v)$ are all smooth functions, $d^2\circ \utilde{x}$ should also be smooth. Since $p_0\notin S$, we have $d^2\circ\utilde{x}(S)\in (0,\infty)$. Note that $f(x)=\sqrt{x}$ is smooth on $(0,\infty)$. Therefore, $\sqrt{d^2\circ\utilde{x}} = d\circ\utilde{x}$ is also smooth. This shows that $d$ is differentiable.
 
 \subsection*{Question 7}
+
+\begin{theorem} Diffeomorphism is an isomorphism in the category of Differentiable Manifolds.
+\end{theorem}
+
+\begin{proof}
+    We need to show reflexivity, symmetric and transititive.
+    Let $(M, \mathscr A)$ and $(N, \mathscr B)$ be two manifolds where $\mathscr A, \mathscr B$ are
+    maximal atlas. Let $f: M \to N$ be a diffeomorphism.
+    \begin{itemize}
+        \item (Reflexive) The diffeomorphism has the property
+        that $x \in \mathscr B$ if and only if $x \circ f \in \mathscr A$,
+        and $f$ is bijective (as sets). Thus, $y \in \mathscr A$ implies, $y \circ f^{-1} \circ f \in \mathscr A$,
+        implying $y \circ f^{-1} \in \mathscr B$. As the implication are reversible,
+        this shows that $f^{-1}$ is also a diffeomorphism.
+        \item (Symmetric) Consider the identity map on $M$. This has the property
+        that $x \in \mathscr A$ if and only if $x \circ \mathrm{Id}_M \in A$.
+        \item (Transitivity) Let $(K, \mathscr C)$ be a manifold where $\mathscr C$ is a maximal atlas,
+        and $g$ be a diffeomorphism from $N$ to $K$.
+        Then, $x \in \mathscr C$ if and only if $x \circ g \in \mathscr B$ if and only if $x \circ g \circ f \in \mathscr A.$
+        As the composition of bijective functions is bijective, $(g \circ f)$ is a diffeomorphism.
+    \end{itemize} 
+\end{proof}
 
 \subsection*{Question 9}
 
