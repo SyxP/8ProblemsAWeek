@@ -92,14 +92,16 @@ This shows that $h$ is constant for any connected component of $S$. However, sin
 
 \subsection*{Question 19}
 
-Let \(S \in \mathbb{R}^3\) be a regular surface and \(P \in R^3\) be a plane.
+Let \(S \in \mathbb{R}^3\) be a regular surface and \(P \in \mathbb{R}^3\) be a plane.
 If all points of \(S\) are on the same side of \(P\), prove that \(P\) is tangent to \(S\) at all points of \(P \cap S\).
 
 \emph{Proof.}
-Let \(p \in P\) and \(n_P\) be a unit normal of the plane \(P\), then consider \[ h(r) = (r - p)\cdot n_P. \]
+Let \(p \in P\) and \(n_P\) be a unit normal of the plane \(P\), then consider \[ h(r) = (r - p)\cdot n_P \]
+one can compute that \(dh_r = n_P\) for all \(r\in \mathbb{R}^3\).
+
 Without loss of generality assume that for all \(s\in S\), \(h(s) \geq 0\), so the surface lies on the ``positive'' side of the plane.
 If \(\gamma(u)\) is a regular path in \(S\), then
-\[ (h\circ \gamma)'(u) = (\nabla h)\cdot \gamma'(u) = n_P \cdot \gamma'(u). \]
+\[ (h\circ \gamma)'(u) = (\nabla h)\cdot \gamma'(u) = n_P \cdot \gamma'(u).\]
 Now if \(s \in P\cap S\), then \(h(s) = 0\),
 and if \(\gamma\) is a path that goes through \(s\) such that \(\gamma(u_0) = s\),
 then we know that \((h\circ\gamma)(u) \geq (h\circ\gamma)(u_0)\) and by extreme value theorem we have
@@ -108,7 +110,17 @@ Since the path \(\gamma\) chosen was arbitrary, it means that the entire tangent
 
 \subsection*{Question 21}
 
-bbb
+Let \(f: S\to R\) be a differentiable function on a connected regular surface \(S\).
+Assume that \(df_p = 0\) for all \(p\in S\).
+Prove that \(f\) is constant on \(S\).
+
+\emph{Proof.}
+Suppose for a contradiction that \(f\) is non-constant, let \(f(s_1) = y_1\) and \(f(s_2) = y_2\) where \(s_1 \ne s_2\) and \(y_1 \ne y_2\).
+Since \(S\) is connected, consider a regular path \(\gamma\) from \(s_1\) to \(s_2\), let \(\gamma(a) = s_1\) and \(\gamma(b) = s_2\).
+By chain rule
+\[ (f\circ \gamma)'(x) = df_{\gamma(x)}\cdot \gamma'(x) = 0 \]
+from single variable calculus we have \(f\circ\gamma\) is a constant function,
+but \((f\circ\gamma)(s_1) = y_1 \ne y_2 = (f\circ\gamma)(s_2)\).
 
 \subsection*{Question 23}
 
