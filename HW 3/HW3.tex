@@ -161,6 +161,29 @@ but \((f\circ\gamma)(s_1) = y_1 \ne y_2 = (f\circ\gamma)(s_2)\).
 
 \subsection*{Question 23}
 
+Let $U = \{(x, y, z) \in \mathbb{R}^3\ |\ z = -1\}$ be identified
+with the complex plane $\mathbb C$, by sending $(x, y, z) \in U$ to $x + iy.$
+Let $P(x) = \sum_{k = 0}^n a_k x^{n-k} \in \mathbb C[x]$ be of degree $n$.
+Denote $\pi$ to be the stereographic projection
+of $S^2 = \{(x, y, z) \in \mathbb{R}^3\ |\ x^2 + y^2 + z^2 = 1\}$
+from the north pole $(0,0,1)$ onto $U$.
+
+Prove that the map $F: S^2 \to S^2$ given by
+\begin{align*}
+    F(p) &= \pi^{-1}\circ P \circ \pi(p)\text{ for }p \not\in U\setminus\{(0,0,1)\}
+    \\F((0,0,1)) &= (0,0,1)
+\end{align*}
+has finitely many critical points.
+
+\begin{proof}
+    Recall that $\pi(x, y, z) = \left(\frac{2x}{1-z}, \frac{2y}{1-z}, -1\right) \subseteq U$.
+    Thus $\pi$ is a diffeomorphism between $U\setminus\{(0,0,1)\}$ and $\mathbb R^2$. Thus, it suffices to
+    show that $\hat{P} : \mathbb R^2 \to \mathbb R^2$ sending $(x, y)$ to $(\mathrm{Re} P(x+iy), \mathrm{Im} P(x+iy))$
+    has finitely many critical points. (We can ignore the north pole, as it doesn't contain infinitely many distinct points).
+    To see this, we require $\frac{\partial \mathrm{Re} P(x+iy)}{\partial x}=\frac{\partial \mathrm{Re} P(x+iy)}{\partial y}=\frac{\partial \mathrm{Im} P(x+iy)}{\partial x}=\frac{\partial \mathrm{Im} P(x+iy)}{\partial y} = 0.$
+    By Complex Analysis, this implies that $\frac{\mathrm dP(z)}{dz} = 0$, but that can only occurs finitely many times as $P$ is a polynomial.
+\end{proof}
+
 \subsection*{Question 25}
 Prove that if two regular curves $C_1$ and $C_2$ of a regular surface $S$ are tangent at a point $p \in S$, and if $\varphi: S \to S$ is a diffeomorphism, then $\varphi(C_1)$ and $\varphi(C_2)$ are regular curves which are tangent at $\varphi(p)$.\\
 
