@@ -7,7 +7,7 @@
 \thispagestyle{empty}
 
 {\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
- 
+
 \smallskip
 \hrule
 \bigskip
@@ -38,11 +38,11 @@ Show that the paraboloid $z = x^2 + y^2$
 is diffeomorphic to the plane.
 
 \textit{Solution.}  Luckily, we can pick one local chart each
-to cover the paraboloid $U$ and the plane $V$. For the paraboloid, we can have $(U, f^{-1})$ where 
-$f: (x, y) \to (x, y, x^2 + y^2)$ and for the plane, we can choose our local chart to be $(V, g^{-1})$ where 
+to cover the paraboloid $U$ and the plane $V$. For the paraboloid, we can have $(U, f^{-1})$ where
+$f: (x, y) \to (x, y, x^2 + y^2)$ and for the plane, we can choose our local chart to be $(V, g^{-1})$ where
 to be $g: (x, y) \to (x, y).$
 
-Let us now define the diffeomorphism 
+Let us now define the diffeomorphism
 $\pi : \mathrm{Im} f \to \mathrm{Im} g.$
 Let $\pi (a, b, c) = (a, b).$ Then, $g^{-1}\circ\pi \circ f = \mathrm{id}_{\mathbb R^2}.$ Thus, $\pi$ is smooth.
 Then, $\pi^{-1}$ is well-defined, as we the fiber over the point $(a, b)$ must be of the form $(a, b, a^2 + b^2).$
@@ -59,6 +59,20 @@ Since $x_i(u,v)$ are all smooth functions, $d^2\circ \utilde{x}$ should also be 
 \subsection*{Question 7}
 
 \subsection*{Question 9}
+
+\textbf{(a).} Define the notion of differentiable function on a regular curve.
+              What does one need to prove for the definition to make sense?
+
+\emph{Solution.}
+Let \(f: C\to \mathbb{R}\) be defined on a regular curve \(S\).
+Then \(f\) is differentiable at \(p\in C\) if,
+for some parametrization \(\alpha: I\to C\) with \(p\in \alpha(I)\subset C\) where \(I\) is an interval,
+the composition \(f\circ \alpha: I\to \mathbb{R}\) is differentiable at \(\alpha^{-1}(p)\).
+\(f\) is differentiable in \(C\) if it is differentiable at all points \(p\in C\).
+
+For the definition to make sense, one has to prove that the definition given does not depend on the choice of parametrization.
+One needs to prove a statement analogous to proposition 1, that is given two parametrizations of \(C\) both containing a neighbourhood of \(p\),
+the change of parameters between those is a diffeomorphism.
 
 \section{Section 2.4}
 
@@ -78,7 +92,23 @@ This shows that $h$ is constant for any connected component of $S$. However, sin
 
 \subsection*{Question 19}
 
+Let \(S \in \mathbb{R}^3\) be a regular surface and \(P \in R^3\) be a plane.
+If all points of \(S\) are on the same side of \(P\), prove that \(P\) is tangent to \(S\) at all points of \(P \cap S\).
+
+\emph{Proof.}
+Let \(p \in P\) and \(n_P\) be a unit normal of the plane \(P\), then consider \[ h(r) = (r - p)\cdot n_P. \]
+Without loss of generality assume that for all \(s\in S\), \(h(s) \geq 0\), so the surface lies on the ``positive'' side of the plane.
+If \(\gamma(u)\) is a regular path in \(S\), then
+\[ (h\circ \gamma)'(u) = (\nabla h)\cdot \gamma'(u) = n_P \cdot \gamma'(u). \]
+Now if \(s \in P\cap S\), then \(h(s) = 0\),
+and if \(\gamma\) is a path that goes through \(s\) such that \(\gamma(u_0) = s\),
+then we know that \((h\circ\gamma)(u) \geq (h\circ\gamma)(u_0)\) and by extreme value theorem we have
+\[ (h\circ\gamma)'(u_0) = 0 = \gamma'(u_0)\cdot n_P. \]
+Since the path \(\gamma\) chosen was arbitrary, it means that the entire tangent plane of \(s\) is normal to \(n_P\) at \(s\), which means that its tangent plane is \(P\).
+
 \subsection*{Question 21}
+
+bbb
 
 \subsection*{Question 23}
 
