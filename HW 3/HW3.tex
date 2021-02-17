@@ -112,6 +112,21 @@ This shows that $h$ is constant for any connected component of $S$. However, sin
 
 \subsection*{Question 17}
 
+Two regular surfaces $S_1$ and $S_2$ intersect transversally if whenever $p \in S_1 \cap S_2$,
+then $T_p(S_1) \neq T_p(S_2)$. Prove that if $S_1$ intersects $S_2$ transversally,
+then a connected component of $S_1 \cap S_2$ is a regular curve.
+
+\begin{proof}
+    Observe in $\mathbb R^3$, if $T_p(S_1) \neq T_p(S_2)$,
+    then $\dim_\mathbb{R} (T_p(S_1) \cap T_p(S_2)) = 1.$
+
+    It suffices to show that $S_1 \cap S_2$ is a locally a curve.
+    This can be seen as we pick $v \in T_p(S_1)\cap T_p(S_2)$. Then
+    we have a curve $c: [0,1] \to S_1$ with initial conditions $c(0) = p$,$c'(0) = v$.
+    Similarly, we have a curve $d:[0,1] \to S_2$ mutatis mutandis.
+    As they share initial conditions, they are locally equal at $p$, and thus the intersection is locally a curve.
+\end{proof}
+
 \subsection*{Question 19}
 
 Let \(S \in \mathbb{R}^3\) be a regular surface and \(P \in \mathbb{R}^3\) be a plane.
