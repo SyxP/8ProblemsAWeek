@@ -51,10 +51,10 @@ $\pi^{-1}$ is smooth as $f^{-1} \circ \pi^{-1} \circ g = \mathrm{Id}_{\mathbb R^
 \subsection*{Question 5}
 Let $S \subset R^3$ be a regular surface, and let $d:S\to R$ be given by $d(p)=|p- p_0|$, where $p \in S, p \in R^3, p_0 \notin S$; that is, $d$ is the distance from $p$ to a fixed point $p_0$, not in $S$. Prove that $d$ is differentiable.\\
 
-\textit{Solution.} We select $p\in S$, a open neighborhood $U$ of $p$ and a parametrization $\utilde{x}: V \to U$, where $V\subset R^2$ and $\utilde{x}(u_0,v_0) = p$. Let $p_0=(p_1,p_2,p_3)$. Then \begin{align*}
-    d^2\circ\utilde{x}(u,v) &= (x_1(u,v)-p_1)^2+(x_2(u,v)-p_2)^2+(x_3(u,v)-p_3)^2
+\textit{Solution.} We select $p\in S$, a open neighborhood $U$ of $p$ and a parametrization $\utilde{x}: V \to U$, where $V\subset R^2$ and $\utilde{x}(u_0,v_0) = p$. Let $p_0=(p_1,p_2,p_3)$. Let $f(p) = (d(p,p_0))^2$Then \begin{align*}
+    f\circ\utilde{x}(u,v) &= (x_1(u,v)-p_1)^2+(x_2(u,v)-p_2)^2+(x_3(u,v)-p_3)^2
 \end{align*}
-Since $x_i(u,v)$ are all smooth functions, $d^2\circ \utilde{x}$ should also be smooth. Since $p_0\notin S$, we have $d^2\circ\utilde{x}(S)\in (0,\infty)$. Note that $f(x)=\sqrt{x}$ is smooth on $(0,\infty)$. Therefore, $\sqrt{d^2\circ\utilde{x}} = d\circ\utilde{x}$ is also smooth. This shows that $d$ is differentiable.
+Since $x_i(u,v)$ are all smooth functions, $f\circ \utilde{x}$ should also be smooth. Since $p_0\notin S$, we have $f\circ\utilde{x}(S)\in (0,\infty)$. Note that $g(x)=\sqrt{x}$ is smooth on $(0,\infty)$. Therefore, $\sqrt{f\circ\utilde{x}} = d\circ\utilde{x}$ is also smooth. This shows that $d$ is differentiable.
 
 \subsection*{Question 7}
 
