@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+%% Insert Commands in Preface.tex
+\input{../Preface.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
+ 
+\smallskip
+\hrule
+\bigskip
+\section{Section 2.5}
+\subsection*{Question 1}
+
+\subsection*{Question 3}
+
+\subsection*{Question 5}
+
+\subsection*{Question 7}
+
+\subsection*{Question 9}
+
+\subsection*{Question 11}
+
+\section{Section 3.2}
+\subsection*{Question 1}
+
+\subsection*{Question 3}
+
+\section{Section 3.3}
+
+\subsection*{Question 1}
+
+\subsection*{Question 3}
+Determine the asymptotic curves of the catenoid
+\begin{equation*}
+    \mathbf{x}(u,v)= (\cosh{v}\cos{u},\cosh{v}\sin{u},v).
+\end{equation*}
+
+\textit{Solution.} We have \begin{align*}
+    &\mathbf{x}_u= (-\cosh{v}\sin{u},\cosh{v}\cos{u},0),\\
+    &\mathbf{x}_v= (\sinh{v}\cos{u},\sinh{v}\sin{u},1),\\
+    &\mathbf{x}_{uu}= (-\cosh{v}\cos{u},-\cosh{v}\sin{u},0),\\
+    &\mathbf{x}_{uv}= (-\sinh{v}\sin{u},\sinh{v}\cos{u},0),\\
+    &\mathbf{x}_{vv}= (\cosh{v}\cos{u},\cosh{v}\sin{u},0).\\
+\end{align*}
+Hence, \begin{align*}
+    N &= \frac{\mathbf{x}_u\wedge \mathbf{x}_v}{|\mathbf{x}_u\wedge \mathbf{x}_v|}\\
+    &=\frac{(\cosh{v}\cos{u},\cosh{v}\sin{u},-\cosh{v}\sinh{v})}{(\cosh{v})^2}\\
+    &=\frac{1}{\cosh{v}}(\cos{u},\sin{u},-\sinh{v}).
+\end{align*}
+Then\begin{align*}
+    e &= \langle N,\mathbf{x}_{uu}\rangle = -1,\\
+    f &= \langle N,\mathbf{x}_{uv}\rangle = 0,\\
+    g &= \langle N,\mathbf{x}_{vv}\rangle = 1.\\
+\end{align*}
+This implies that the asymptotic directions correspond to $\langle u',v'\rangle$ satisfies \begin{align*}
+    &e(u')^2 + 2fu'v' + g(v')^2 = 0\\
+    \Rightarrow &-(u')^2 + (v')^2 = 0\\
+    \Rightarrow & u'=v' \quad\text{or}\quad u'=-v'.
+\end{align*}
+This shows that the asymptotic curves are the traces of $v=u+a$ or $v=-u+b$ for some $a,b\in\mathbb{R}$, which are \begin{align*}
+    &\alpha_a(u) = \mathbf{x}(u,u+a) = (\cosh{(u+a)}\cos{u},\cosh{(u+a)}\sin{u},u+a),\\
+    &\beta_b(u) = \mathbf{x}(u,-u+b) = (\cosh{(-u+b)}\cos{u},\cosh{(-u+b)}\sin{u},-u+b).
+\end{align*}
+The collection of all $\alpha_a,\beta_b$ are all the asymptotic curves.
+
+\subsection*{Question 9}
+(Contact of Curves.) Define contact of order $\geq n$ ($n$ integer $\geq 1$) for regular curves in R3 with a common point $p$ and prove that\\
+a. The notion of contact of order $\geq n$ is invariant by diffeomorphisms.\\
+b. Two curves have contact of order $\geq 1$ at $p$ if and only if they are tangent at $p$.\\
+
+\textit{Solution.} We say two surfaces $S$ and $\bar{S}$ with a common point $p$ to have contact of order $\geq n$ at $p$ if there exist parametrizations $\mathbf{x}(u, v)$ and $\mathbf{\tilde{x}}(u,v)$ in $p$ of $S$ and $\bar{S}$ such that the partial derivatives of $\mathbf{x}$ and $\mathbf{\tilde{x}}(u,v)$ agree up to order $n$.\\\\
+a. Let $\psi:\mathbb{R}^3 \to \mathbb{R}^3$ be a diffeomorphism. Then for any partial derivative operator $\partial_I$ of order less than $n$ on $u-v$ space. Then \begin{equation*}
+    \partial_I\psi(\mathbf{x}) = J_\psi(\mathbf{x})\partial_I\mathbf{x} = J_\psi(\mathbf{\tilde{x}})\partial_I\mathbf{\tilde{x}} = \partial_I\psi(\mathbf{\tilde{x}}),
+\end{equation*}
+where $J\psi(\cdot)$ is the Jacobian of $\psi$. This shows that the notion of contact is invariant by diffeomorphisms.\\\\
+b. It is easy to see that the contact of order $\geq 1$ implies that the two surfaces are tangent. For the converse, we suppose $S$ and $\bar{S}$ are tangent at $p$ with parametrizations $\mathbf{x(u,v)}$ and $\mathbf{\tilde{x}}(u,v)$ respectively. Then at the point $p$, $\mathbf{\tilde{x}}_u, \mathbf{\tilde{x}}_v \in T_{\mathbf{x}}(p)$ we can write \begin{align*}
+    &\mathbf{\tilde{x}}_u = a_1 \mathbf{x}_u + a_2 \mathbf{x}_v,\\
+    &\mathbf{\tilde{x}}_v = b_1 \mathbf{x}_u + b_2 \mathbf{x}_v.\\
+\end{align*}
+Note that since $\mathbf{\tilde{x}}_u, \mathbf{\utilde{x}}_v$ are linearly independent, we have $a_1b_2-a_2b_1\neq 0$. Now let $w = \frac{b_2u-a_2v}{a_1b_2-a_2b_1}$, $l = \frac{b_1u-a_1v}{a_2b_1-a_1b_2}$ and $\mathbf{{y}}(w,l) = \mathbf{\tilde{x}}(u,v)$. Then \begin{align*}
+    \mathbf{y}_w &= \frac{b_2}{a_1b_2-a_2b_1}\mathbf{\tilde{x}}_u-\frac{a_2}{a_1b_2-a_2b_1}\mathbf{\tilde{x}}_v=\mathbf{x}_u,\\
+    \mathbf{y}_l &=
+    \frac{b_1}{a_2b_1-a_1b_2}\mathbf{\tilde{x}}_u-\frac{a_1}{a_2b_1-a_1b_2}\mathbf{\tilde{x}}_v=\mathbf{x}_v.
+\end{align*}
+This shows that $S$ and $\bar{S}$ have contact of order $\geq 1$ at p. 
+
+\subsection*{Question 15}
+Give an example of a surface which has an isolated parabolic point $p$ (that is, no other parabolic point is contained in some neighborhood of $p$).
+
+\textit{Solution.} Consider the graph $(x,y,xy^2)$. Let $h(x,y)=xy^2$. Then we have\begin{align*}
+    K &= \frac{h_{xx}h_{yy}-(h_{xy})^2}{(1+h_x^2+h_y^2)^2} = \frac{-2y}{(1+y^4+4x^2y^2)^2},\\
+    e &= \frac{h_{xx}}{(1+h_x^2+h_y^2)^{1/2}}=0,\\
+    f &= \frac{h_{xy}}{(1+h_x^2+h_y^2)^{1/2}}=\frac{2y}{(1+h_x^2+h_y^2)^{1/2}},\\
+    g &= \frac{h_{yy}}{(1+h_x^2+h_y^2)^{1/2}}=\frac{2}{(1+h_x^2+h_y^2)^{1/2}}.
+\end{align*}
+ Then $K=0$ only at $(0,0,0)$, at which $f$ and $g$ are nonzero. This shows that the graph has an isolated parabolic point.
+ 
+\subsection*{Question 19}
+Obtain the asymptotic curves of the one-sheeted hyperboloid $x^2 + y^2 - z^2 = 1$.
+
+\textit{Solution.} Note that the hyperboloid is a surface of revolution parametrized by \begin{equation*}
+    \mathbf{x}(u,v) = (\phi(v)\cos{u},\phi(v)\sin{u},\psi(v)),
+\end{equation*}
+where $\phi(v) = \cosh{v},\psi(v)=\sinh{v}$ and $u\in(0,2\pi)$. Then\begin{align*}
+    e &=  -\phi\psi'=-\cosh^2(v),\\
+    f &= 0,\\
+    g &= \psi'\phi''-\psi''\phi'=\cosh^2(v)-\sinh^2(v)=1.
+\end{align*}
+Then solving $e(u')^2 +2fu'v'+g(v')^2=0$, we have \begin{equation*}
+    v'=u'\cosh(v) \qquad \text{or} \qquad v'=-u'\cosh(v).
+\end{equation*}
+Solving the ODE, we have \begin{equation*}
+    u(t) = \pm \tan^{-1}(\sinh v(t)) + C,\qquad C\in \mathbb{R}
+\end{equation*}
+Hence, the asymptotic curves will be the trace of $\gamma_C(v) = (\pm\tan^{-1}( \sinh v)  + C,v), v\in R$. They are \begin{equation*}
+    \alpha_C(v) = \mathbf{x}(\tan^{-1}( \sinh v)  + C,v)
+\end{equation*} or \begin{equation*}
+    \beta_C(v) = \mathbf{x}(-\tan^{-1}( \sinh v)  + C,v)
+\end{equation*}
+
+\subsection*{Question 21}
+Let $S$ be a surface with orientation $N$. Let $V \subset S$ be an open set in $S$ and let $f : V \subset S \to R$ be any nowhere-zero differentiable function in $V$. Let $v_1$ and $v_2$ be two differentiable (tangent) vector fields in $V$ such that at each point of $V$, $v_1$ and $v_2$ are orthonormal and $v_1 \wedge v_2 = N$.\\
+a. Prove that the Gaussian curvature $K$ of $V$ is given by \begin{equation*}
+    K = \frac{\langle dfN(v_1)\wedge dfN(v_2),fN\rangle}{f^3}.
+\end{equation*}
+b. Apply the above result to show that iff is the restriction of \begin{equation*}
+    \sqrt{\frac{x^2}{a^4}+\frac{y^2}{b^4}+\frac{z^2}{c^4}}
+\end{equation*}
+to the ellipsoid \begin{equation*}
+    \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1,
+\end{equation*}
+ then the Gaussian curvature of the ellipsoid is\begin{equation*}
+     K = \frac{1}{a^2b^2c^2}\frac{1}{f^4}.
+\end{equation*}
+ 
+\textit{Solution.} Since $f$ is a smooth function on $V=\mathbf{x}(u,v)$, if $\alpha'(0) = v_i = \frac{d}{dt}\mathbf{x}(\beta(t))|_{t=0}$, we have \begin{align*}
+     dfN(v_i) &= \frac{d}{dt}f(\alpha(t))N(\alpha(t))\\
+     &=(\frac{d}{dt}f(\alpha(t)))N(\alpha(t))|_{t=0} + f(\alpha(t))\frac{d}{dt}N(\alpha(t))|_{t=0}\\
+     &=(\nabla(f\circ \mathbf{x}) \cdot \beta'(0))N + fdN(v_i).
+\end{align*}
+Hence, \begin{align*}
+    &dfN(v_1) \wedge dfN(v_2) = (C_1N + fdN(v_1)) \wedge (C_2N + fdN(v_2))\\
+    &= C_1N\wedge fdN(v_2) - C_2N \wedge fdN(v_1)+f^2(dN(v_1) \wedge dN(v_2))\\
+    &= C_1N\wedge fdN(v_2) - C_2N \wedge fdN(v_1)+f^2\det(dN)(v_1 \wedge v_2)\\
+    &= C_1N\wedge fdN(v_2) - C_2N \wedge fdN(v_1)+f^2\det(dN)N.
+\end{align*}
+Therefore, \begin{align*}
+    dfN(v_1) \wedge dfN(v_2) \cdot fN &= C_1N\wedge fdN(v_2) \cdot fN - C_2N \wedge fdN(v_1) \cdot fN +f^2\det(dN)N \cdot fN\\
+    &=f^3KN\cdot N = f^3K.
+\end{align*}
+Thus \begin{equation*}
+    \frac{dfN(v_1) \wedge dfN(v_2) \cdot fN }{f^3}=K.
+\end{equation*}
+b. We know that \begin{align*}
+    N(x,y,z) &= \frac{(\frac{2x}{a^2},\frac{2y}{b^2},\frac{2z}{c^2})}{|(\frac{2x}{a^2},\frac{2y}{b^2},\frac{2z}{c^2})|}\\
+    &= \frac{(\frac{x}{a^2},\frac{y}{b^2},\frac{z}{c^2})}{|(\frac{x}{a^2},\frac{y}{b^2},\frac{z}{c^2})|}\\
+    &=\frac{(\frac{x}{a^2},\frac{y}{b^2},\frac{z}{c^2})}{f(x,y,z)}.
+\end{align*}
+Therefore, $fN = (\frac{x}{a^2},\frac{y}{b^2},\frac{z}{c^2})$. Then \begin{align*}
+    \frac{d}{dt}fN(\alpha(t))&= (\frac{x'(t)}{a^2},\frac{y'(t)}{b^2},\frac{z'(t)}{c^2})\\
+    &=\begin{pmatrix} a^{-2}&&\\&b^{-2}&\\&&c^{-2}\end{pmatrix} \alpha'(t).
+\end{align*}
+Hence, $dfN(v_i) = \begin{pmatrix} a^{-2}&&\\&b^{-2}&\\&&c^{-2}\end{pmatrix}v_i$ and thus \begin{align*}
+    K &= \frac{dfN(v_1) \wedge dfN(v_2) \cdot fN }{f^3}\\
+    &= \det(dfN)\frac{(dfN^{-1})^T(v_1\wedge v_2) \cdot fN}{f^3}\\
+    &=(abc)^{-2}\frac{(dfN^{-1})N \cdot fN}{f^3}\\
+    &=(abc)^{-2}\frac{1}{f^3}\begin{pmatrix} a^{2}&&\\&b^{2}&\\&&c^{2}\end{pmatrix}\frac{(\frac{x}{a^2},\frac{y}{b^2},\frac{z}{c^2})}{f(x,y,z)} \cdot (\frac{x}{a^2},\frac{y}{b^2},\frac{z}{c^2})\\
+    & = (abc)^{-2}\frac{1}{f^3}\frac{(x,y,z)}{f} \cdot (\frac{x}{a^2},\frac{y}{b^2},\frac{z}{c^2})\\
+    &= \frac{1}{a^2b^2c^2}\frac{1}{f^4}
+\end{align*}
+
+
+
+
+
+
+\end{document}
