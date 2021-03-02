@@ -82,11 +82,72 @@ Direct Computation shows,
 
 \subsection*{Question 3}
 
+
+\begin{sagesilent}
+    a,b,c,u,v = var('a,b,c,u,v')
+    c1 = 4*u/(u^2 + v^2 + 4)
+    c2 = 4*v/(u^2 + v^2 + 4)
+    c3 = 2*(u^2 + v^2)/(u^2 + v^2 + 4)
+\end{sagesilent}
+
+We have the parameterization 
+$$x(u,v) = (\sage{c1}, \sage{c2}, \sage{c3}).$$
+
+Hence,
+
+\begin{enumerate}
+\item $\frac{ \partial x}{\partial u} = (\sage{diff(c1,u)}, \sage{diff(c2, u)}, \sage{diff(c3,u)})$ 
+\item $\frac{ \partial x}{\partial v} = (\sage{diff(c1,v)}, \sage{diff(c2, v)}, \sage{diff(c3,v)})$
+\item $E = \sage{(diff(c1,u)^2 + diff(c2,u)^2 + diff(c3,u)^2).full_simplify()}$
+\item $F = \sage{(diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()}$ 
+\item $G = \sage{(diff(c1,v)^2 + diff(c2,v)^2 + diff(c3,v)^2).full_simplify()}$
+\end{enumerate}
+
 \subsection*{Question 5}
+
+We have the parameterization 
+$$x(u,v) = (u,v, f(u,v)).$$
+
+Hence,
+
+\begin{enumerate}
+\item $\frac{ \partial x}{\partial u} = (1, 0, \frac{ \partial f}{\partial u})$ 
+\item $\frac{ \partial x}{\partial v} = (0,1, \frac{ \partial f}{\partial v})$
+\end{enumerate}
+
+And thus, $\frac{ \partial x}{\partial u} \times \frac{ \partial x}{\partial v} = (-\frac{ \partial x}{\partial u} ,-\frac{ \partial x}{\partial v}, 1)$
+and so 
+$$ A = \iint_Q |(-\frac{ \partial x}{\partial u} ,-\frac{ \partial x}{\partial v}, 1)| \mathrm dx \mathrm dy = \iint_Q \sqrt{\frac{ \partial x}{\partial u}^2 +\frac{ \partial x}{\partial v}^2 + 1^2} \mathrm dx \mathrm dy$$
 
 \subsection*{Question 7}
 
+The conditions translate to for all $i, j \in \mathbb R$ such that $i < j$.
+\begin{align}
+    \begin{split}
+        \hat{E}(v) &= \int_i^j \sqrt{E(u,v)} \mathrm{d}u\\
+        \hat{G}(v) &= \int_i^j \sqrt{G(u,v)} \mathrm{d}v
+    \end{split}
+\end{align}
+
+are constant functions. Differentiation the first with respect to $v$, and the second with respect to $u$ yields the answer.
+
 \subsection*{Question 9}
+
+
+We consider the parameterization 
+$$x(u,v) = (f(u)\cos(v), f(u)\sin(v), g(u))$$.
+
+Hence,
+
+\begin{enumerate}
+\item $\frac{ \partial x}{\partial u} = (f'(u)\cos(v), f'(u)\sin(v), g'(u))$ 
+\item $\frac{ \partial x}{\partial v} = (-f(u)\sin(v), f(u)\cos(v), 0)$
+\item $E = f'(u)^2 + g'(u)^2$
+\item $F = 0$ 
+\item $G = 1$
+\end{enumerate}
+
+Swapping the variable names, $u \leftrightarrow v$ suffices.
 
 \subsection*{Question 11}
 
