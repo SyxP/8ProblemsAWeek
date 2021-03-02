@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 %% Insert Commands in Preface.tex
+\usepackage{sagetex}
 \input{../Preface.tex}
 
 \begin{document}
@@ -13,6 +14,71 @@
 \bigskip
 \section{Section 2.5}
 \subsection*{Question 1}
+The general recipe is to $(E, F, G) = (\langle \frac{ \partial x}{\partial u},\frac{ \partial x}{\partial u}\rangle, \langle\frac{ \partial x}{\partial u},\frac{ \partial x}{\partial v}\rangle,\langle\frac{ \partial x}{\partial v},\frac{ \partial x}{\partial v}\rangle)$.x
+
+Direct Computation shows,
+
+\begin{enumerate}
+    \begin{sagesilent}
+        a,b,c,u,v = var('a,b,c,u,v')
+        c1 = a*sin(u)*cos(v)
+        c2 = b*sin(u)*sin(v)
+        c3 = c*cos(u)
+    \end{sagesilent}
+    \item We have that 
+    \begin{enumerate}
+    \item $\frac{ \partial x}{\partial u} = (\sage{diff(c1,u)}, \sage{diff(c2, u)}, \sage{diff(c3,u)})$ 
+    \item $\frac{ \partial x}{\partial v} = (\sage{diff(c1,v)}, \sage{diff(c2, v)}, \sage{diff(c3,v)})$
+    \item $E = \sage{(diff(c1,u)^2 + diff(c2,u)^2 + diff(c3,u)^2).full_simplify()}$
+    \item $F = \sage{(diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()}$ 
+    \item $G = \sage{(diff(c1,v)^2 + diff(c2,v)^2 + diff(c3,v)^2).full_simplify()}$
+    \end{enumerate}
+
+    \begin{sagesilent}
+        a,b,c,u,v = var('a,b,c,u,v')
+        c1 = a*u*cos(v)
+        c2 = b*u*sin(v)
+        c3 = u^2
+    \end{sagesilent}
+    \item We have that 
+    \begin{enumerate}
+    \item $\frac{ \partial x}{\partial u} = (\sage{diff(c1,u)}, \sage{diff(c2, u)}, \sage{diff(c3,u)})$ 
+    \item $\frac{ \partial x}{\partial v} = (\sage{diff(c1,v)}, \sage{diff(c2, v)}, \sage{diff(c3,v)})$
+    \item $E = \sage{(diff(c1,u)^2 + diff(c2,u)^2 + diff(c3,u)^2).full_simplify()}$
+    \item $F = \sage{(diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()}$ 
+    \item $G = \sage{(diff(c1,v)^2 + diff(c2,v)^2 + diff(c3,v)^2).full_simplify()}$
+    \end{enumerate}
+
+    \begin{sagesilent}
+        a,b,c,u,v = var('a,b,c,u,v')
+        c1 = a*u*cosh(v)
+        c2 = b*u*sinh(v)
+        c3 = u^2
+    \end{sagesilent}
+    \item We have that 
+    \begin{enumerate}
+    \item $\frac{ \partial x}{\partial u} = (\sage{diff(c1,u)}, \sage{diff(c2, u)}, \sage{diff(c3,u)})$ 
+    \item $\frac{ \partial x}{\partial v} = (\sage{diff(c1,v)}, \sage{diff(c2, v)}, \sage{diff(c3,v)})$
+    \item $E = \sage{(diff(c1,u)^2 + diff(c2,u)^2 + diff(c3,u)^2).full_simplify()}$
+    \item $F = \sage{(diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()}$ 
+    \item $G = \sage{(diff(c1,v)^2 + diff(c2,v)^2 + diff(c3,v)^2).full_simplify()}$
+    \end{enumerate}
+
+    \begin{sagesilent}
+        a,b,c,u,v = var('a,b,c,u,v')
+        c1 = a*sinh(u)*cos(v)
+        c2 = b*sinh(u)*sin(v)
+        c3 = c*cosh(u)
+    \end{sagesilent}
+    \item We have that 
+    \begin{enumerate}
+    \item $\frac{ \partial x}{\partial u} = (\sage{diff(c1,u)}, \sage{diff(c2, u)}, \sage{diff(c3,u)})$ 
+    \item $\frac{ \partial x}{\partial v} = (\sage{diff(c1,v)}, \sage{diff(c2, v)}, \sage{diff(c3,v)})$
+    \item $E = \sage{(diff(c1,u)^2 + diff(c2,u)^2 + diff(c3,u)^2).full_simplify()}$
+    \item $F = \sage{(diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()}$ 
+    \item $G = \sage{(diff(c1,v)^2 + diff(c2,v)^2 + diff(c3,v)^2).full_simplify()}$
+    \end{enumerate}
+\end{enumerate}
 
 \subsection*{Question 3}
 
@@ -73,8 +139,8 @@ a. The notion of contact of order $\geq n$ is invariant by diffeomorphisms.\\
 b. Two curves have contact of order $\geq 1$ at $p$ if and only if they are tangent at $p$.\\
 
 \textit{Solution.} We say two surfaces $S$ and $\bar{S}$ with a common point $p$ to have contact of order $\geq n$ at $p$ if there exist parametrizations $\mathbf{x}(u, v)$ and $\mathbf{\tilde{x}}(u,v)$ in $p$ of $S$ and $\bar{S}$ such that the partial derivatives of $\mathbf{x}$ and $\mathbf{\tilde{x}}(u,v)$ agree up to order $n$.\\\\
-a. Let $\psi:\mathbb{R}^3 \to \mathbb{R}^3$ be a diffeomorphism. Then for any partial derivative operator $\partial_I$ of order less than $n$ on $u-v$ space. Then \begin{equation*}
-    \partial_I\psi(\mathbf{x}) = J_\psi(\mathbf{x})\partial_I\mathbf{x} = J_\psi(\mathbf{\tilde{x}})\partial_I\mathbf{\tilde{x}} = \partial_I\psi(\mathbf{\tilde{x}}),
+a. Let $\psi:\mathbb{R}^3 \to \mathbb{R}^3$ be a diffeomorphism. Then for any partial derivative operator $\partial _I$ of order less than $n$ on $u-v$ space. Then \begin{equation*}
+    \partial _I\psi(\mathbf{x}) = J_\psi(\mathbf{x})\partial _I\mathbf{x} = J_\psi(\mathbf{\tilde{x}})\partial _I\mathbf{\tilde{x}} = \partial _I\psi(\mathbf{\tilde{x}}),
 \end{equation*}
 where $J\psi(\cdot)$ is the Jacobian of $\psi$. This shows that the notion of contact is invariant by diffeomorphisms.\\\\
 b. It is easy to see that the contact of order $\geq 1$ implies that the two surfaces are tangent. For the converse, we suppose $S$ and $\bar{S}$ are tangent at $p$ with parametrizations $\mathbf{x(u,v)}$ and $\mathbf{\tilde{x}}(u,v)$ respectively. Then at the point $p$, $\mathbf{\tilde{x}}_u, \mathbf{\tilde{x}}_v \in T_{\mathbf{x}}(p)$ we can write \begin{align*}
