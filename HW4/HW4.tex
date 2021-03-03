@@ -235,6 +235,30 @@ Putting everything together we have
 
 \subsection*{Question 1}
 
+Show that at the origin \((0,0,0)\) of the hyperboloid \(z = axy\) we have \(K = -a^2\) and \(H = 0\).
+
+\emph{Solution.}
+We parametrize the hyperboloid
+\[ \mathbf{x}(u,v) = (u,v,auv). \]
+We compute the following at origin \((0,0,0)\)
+\begin{align*}
+    \mathbf{x}_u &= (1,0,av) \\
+    \mathbf{x}_v &= (0,1,au) \\
+    \mathbf{x}_{uu} &= \mathbf{0} \\
+    \mathbf{x}_{uv} &= (0,0,a) \\
+    \mathbf{x}_{vv} &= \mathbf{0} \\
+    N &= \frac{\mathbf{x}_u\wedge \mathbf{x}_v}{|\mathbf{x}_u\wedge \mathbf{x}_v|} = (-av, -au, 1) \\
+    e &= \langle N,\mathbf{x}_{uu}\rangle = 0 \\
+    f &= \langle N,\mathbf{x}_{uv}\rangle = a \\
+    g &= \langle N,\mathbf{x}_{vv}\rangle = 0 \\
+    E &= \langle \mathbf{x}_u,\mathbf{x}_u\rangle = 1 + a^2v^2 = 1\\
+    F &= \langle \mathbf{x}_u,\mathbf{x}_v\rangle = a^2uv = 0\\
+    G &= \langle \mathbf{x}_v,\mathbf{x}_v\rangle = 1+a^2u^2 = 1\\
+    K &= \frac{eg - f^2}{EG - F^2} \\
+      &= -a^2 \\
+    H &= \frac12 \frac{eG - 2fF + gE}{EG - F^2} = 0
+\end{align*}
+
 \subsection*{Question 3}
 Determine the asymptotic curves of the catenoid
 \begin{equation*}
