@@ -202,9 +202,9 @@ Show that at a hyperbolic point, the principal directions bissect the asymptotic
 
 \emph{Proof.}
 Let \(p\) be a hyperbolic point and let \(v\) be an asymptotic direction with angle \(\theta\) from \(e_1\),
-where by Euler's formula we write \(v\) as
+where we write \(v\) as
 \[ v = e_1\cos\theta + e_2\sin\theta. \]
-As \(v\) is asymptotic we have
+As \(v\) is asymptotic by Euler's formula we have
 \[ 0 = \mathrm{II}_p(v) = k_1 \cos^2\theta + k_2 \sin^2\theta. \]
 Since we have the identities \(\cos(\pi-\theta) = -\cos\theta\) and \(\sin(\pi-\theta) = \sin(\theta)\)
 we have
@@ -213,6 +213,23 @@ is also asymptotic.
 Now we see that \(e_2\) bisects \(v\) and \(v'\).
 
 \subsection*{Question 3}
+
+Let \(C\subset S\) be a regular curve on a surface \(S\) with Gaussian curvature \(K>0\).
+Show that the curvature \(k\) of \(C\) at \(p\) satisfies \[ k\geq \min(|k_1|,|k_2|),\]
+where \(k_1\) and \(k_2\) are the principal curvatures of \(S\) at \(p\).
+
+\emph{Proof.}
+WLOG suppose the \(S\) is oriented such that both \(k_1, k_2\) are positive,
+furthermore for simplicity suppose \(0 < k_1 < k_2\).
+Note that \(k = k_n + k\sin\theta\) so \(k \geq k_n\),
+it suffices to prove that \(k_n\geq \min(k_1,k_2)\).
+Let \(v\) be the tangent of the curve \(C\) at \(p\), then
+\[ v = e_1 \cos\theta + e_2 \sin\theta \]
+for some angle \(\theta\).
+By Euler's formula we have
+\[ k_n = k_1 \cos^2(\theta) + k_2\sin^2(\theta). \]
+Putting everything together we have
+\[ k \geq k_n = k_1 \cos^2(\theta) + k_2\sin^2(\theta) \geq k_1 \cos^2(\theta) + k_1\sin^2(\theta) = k_1 = \min(k_1, k_2). \]
 
 \section{Section 3.3}
 
