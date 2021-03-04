@@ -45,7 +45,7 @@ to be $g: (x, y) \to (x, y).$
 Let us now define the diffeomorphism 
 $\pi : U \to V.$
 Let $\pi (a, b, c) = (a, b).$ Then, $g^{-1}\circ\pi \circ f = \mathrm{id}_{\mathbb R^2}.$ Thus, $\pi$ is smooth.
-Then, $\pi^{-1}$ is well-defined, as we the fiber over the point $(a, b)$ must be of the form $(a, b, a^2 + b^2).$
+Then, $\pi^{-1}$ is well-defined as it is bijective as a function of sets.
 $\pi^{-1}$ is smooth as $f^{-1} \circ \pi^{-1} \circ g = \mathrm{Id}_{\mathbb R^2}.$ Thus, $\pi$ is a diffeomorphism.
 
 \subsection*{Question 5}
@@ -58,8 +58,27 @@ Since $x_i(u,v)$ are all smooth functions, $f\circ \utilde{x}$ should also be sm
 
 \subsection*{Question 7}
 
+\begin{definition}
+    A \textbf{manifold} is a second-countable Hausdorff topological space $M$ such that
+    for any point $m \in M$, there exists an open set $N$ containing $m$ such that $N$ is homeomorphic to a subspace of $\mathbb R^k$ for some fixed $k \in \mathbb Z_{\geq 0}$.
+
+    A \textbf{chart} is a pair $(U, \phi)$ such that $U$ is an open subset of $M$ and $\phi:U \to \mathbb R^k$
+    is a homeomorphism. Then, an \textbf{atlas} is a set of charts such that for every point, there exists a chart
+    $(A, \alpha)$ such that $A$ contains the point.
+
+    A \textbf{differentiable manifold} is a manifold with an atlas with the property that
+    for any two charts $(A, \alpha)$ and $(B, \beta)$ in the atlas, if $A\cap B$ is nonempty, $\beta\circ \alpha^{-1}$
+    is a differentiable map when restricted such that the image of $\alpha^{-1}$ is $A\cap B$.
+\end{definition}
+
 \begin{theorem} Diffeomorphism is an isomorphism in the category of Differentiable Manifolds.
 \end{theorem}
+
+\begin{remark}
+    A surface is a manifold, as it is by definition Hausdorff and second countable as a subspace of $\mathbb R^3$,
+    and locally is isomorphic to $\mathbb R^2$ as per the definiton of surface.
+    A regular surface implies that we have a atlas with compatible differentiable structure.
+\end{remark}
 
 \begin{proof}
     We need to show reflexivity, symmetric and transititive.
