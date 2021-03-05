@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+%% Insert Commands in Preface.tex
+\input{Preface.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
+ 
+\smallskip
+\hrule
+\bigskip
+\section{Section 3.5}
+\subsection*{Question 1}
+Show that the helicoid (cf. Example 3, Sec. 2-5) is a ruled surface, its line of striction is the z-axis, and its distribution parameter is constant.\\
+
+\textit{Solution.} The helicoid is a surface with parametrization $\mathbf{x}(u,v) = (a\sinh{v}\cos{u},a\sinh{v}\sin{u},au)$ with some $a \neq 0 $. We let $\mathbf{y}(t,v) = \mathbf{x}(t,\sinh^{-1}(v/a))$ be a reparametrization of helicoid. Then \begin{align*}
+    \mathbf{y}(t,v) &= (a\sinh(\sinh^{-1}(v/a))\cos{t},a\sinh(\sinh^{-1}(v/a))\sin{t},at)\\
+    &=(0,0,at) + v(\cos{t},\sin{t},0).
+\end{align*}
+Let $\alpha(t) = (0,0,at)$ and $w(t) = (\cos{t},\sin{t},0)$. We can see let the helicoid is a ruled surface and $|w(t)| \equiv 1$.\\
+
+To find the line of restriction and the distribution parameter, we notice that \begin{equation*}
+    \alpha'(t) = (0,0,a)\qquad w'(t) = (-\sin{t},\cos{t},0).
+\end{equation*}
+Hence, \begin{equation*}
+    u(t) =- \frac{\langle \alpha'(t), w'(t)\rangle}{\langle w'(t), w'(t)\rangle}=0.
+\end{equation*}
+This shows that $\beta(t) = \alpha(t) + u(t)w(t) = \alpha(t)$, which is the z-axis. Besides, \begin{align*}
+    \lambda(t) &= \frac{\langle\beta'(t)\wedge w(t),w'(t)\rangle}{|w'(t)|^2}\\
+    &=\frac{\langle\alpha'(t)\wedge w(t),w'(t)\rangle}{|w'(t)|^2}\\
+    &=\frac{\langle(0,0,a)\wedge (\cos{t},\sin{t},0),(-\sin{t},\cos{t},0)\rangle}{|(-\sin{t},\cos{t},0)|^2}\\
+    &=\langle (-a\sin{t},a\cos{t},0),(-\sin{t},\cos{t},0)\rangle\\
+    &=a,
+\end{align*}
+which is a constant.
+ 
+\subsection*{Question 6}
+Let\begin{equation*}
+    \mathbf{x}(t,v) = \alpha(t) + vw(t)
+\end{equation*}
+be a developable surface. Prove that at a regular point we have\begin{equation*}
+    \langle N_v,\mathbf{x}_v\rangle = \langle N_v,\mathbf{x}_t\rangle = 0.
+\end{equation*}
+Conclude that the tangent plane of a developable surface is constant along (the regular points of) a fixed ruling.\\
+
+\textit{Solution.} We have \begin{align*}
+    \mathbf{x}_t &= a'(t) + vw'(t),\\
+    \mathbf{x}_v &= w(t),\\
+    \mathbf{x}_{vt} &= w'(t),\\
+    \mathbf{x}_{vv} &= 0.
+\end{align*}
+Hence, we have \begin{align*}
+    \langle N_v,\mathbf{x}_v \rangle &= -\langle N,\mathbf{x}_{vv} \rangle\\
+    &= -\langle N,0 \rangle\\
+    &= 0\\
+    \langle N_v,\mathbf{x}_t \rangle &= -\langle N,\mathbf{x}_{vt} \rangle\\
+    &= -\langle \frac{(a'(t) + vw'(t))\wedge w(t)}{|(a'(t) + vw'(t))\wedge w(t)|},w'(t) \rangle\\
+    &= C\langle(a'(t) + vw'(t))\wedge w(t),w'(t) \rangle\\
+    &= C\langle a'(t)\wedge w(t),w'(t) \rangle + Cv\langle w'(t)\wedge w(t),w'(t) \rangle\\
+    &= C\langle a'(t)\wedge w(t),w'(t) \rangle\\
+    &= C\langle a'(t), w(t)\wedge w'(t) \rangle\\
+    &= 0,
+\end{align*}
+where $C = -\frac{1}{|(a'(t) + vw'(t))\wedge w(t)|}$. Since $\langle N_v,\mathbf{x}_v\rangle = \langle N_v,\mathbf{x}_t\rangle = 0$ and $N_v \in T_p(S) = span\{\mathbf{x}_v,\mathbf{x}_t\}$ for all the regular points, we have $N_v = 0$ for all the regular points. In particular, $N_v=0$ for a fixed ruling and hence $N$ is constant for a fixed ruling. This implied that the tangent plane of a developable surface is constant along a fixed ruling.
+\end{document}
