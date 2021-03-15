@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+%% Insert Commands in Preface.tex
+\input{.../Preface.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
+
+\smallskip
+\hrule
+\bigskip
+\section{Section 4.2}
+\subsection*{Question 13}
+Let $V$ and $W$ be (finite-dimensional) vector spaces with inner products $\langle ,\rangle$. Let $G: V \to W$ be a linear map. Prove that the following conditions are equivalent:
+\begin{enumerate}
+    \item There exists a real constant $\lambda \neq 0$ such that \begin{equation*}
+        \langle G(v_1), G(v_2)\rangle = \lambda^2\langle v_1, v_2\rangle \quad \text{for all} v_1,v_2 \in V.
+    \end{equation*}
+    \item There exists a real constant $\lambda>0$ such that \begin{equation*}
+        |G(v)| = \lambda |v|\quad \text{for all}\quad v \in V.
+    \end{equation*}
+    \item There exists an orthonormal basis $\{v_1,\dots,v_n\}$ of $V$ such that $\{G(v_1),...,G(v_n)\}$ is an orthogonal basis of $W$ and, also, the vectors $G(v_i), i = 1, ...,n$, have the same (nonzero) length.
+\end{enumerate}
+
+If any of these conditions is satisfied, G is called a linear conformal map (or a similitude).\\
+
+\textit{Solution.}
+($1 \Rightarrow 2$) We have \begin{align*}
+    |G(v)| &= \sqrt{\langle G(v), G(v)\rangle}\\
+    &= \sqrt{\lambda^2 \langle v, v\rangle}\\
+    &= |\lambda|\sqrt{\langle v, v\rangle}\\
+    &= |\lambda||v|,
+\end{align*}
+where $|\lambda| > 0$ is the positive constant desired.\\
+
+($2 \Rightarrow 1$) We have \begin{align*}
+    \langle G(v_1), G(v_2)\rangle &= \frac{1}{2}(|G(v_1)+G(v_2)|^2-|G(v_1)|^2-|G(v_2)|^2),\\
+    &= \frac{\lambda^2}{2}(|v_1+v_2|^2-|v_1|^2-|v_2|^2)\\
+    &= \lambda^2\langle v_1, v_2\rangle\\
+\end{align*}
+
+($1\&2 \Rightarrow 3$) For $\{v_i,v_j\}$ orthonormal we have \begin{align*}
+    |G(v_i)| = \lambda|v_i| &= \lambda|v_j| = |G(v_j)|\\
+    \langle G(v_i), G(v_j)\rangle &= \lambda^2 \langle v_i, v_j\rangle
+\end{align*}
+This shows that $\{G(v_1),...,G(v_n)\}$ is an orthogonal basis of $W$ and $G(v_i), i = 1, ...,n$, have the same (nonzero) length.\\
+
+($3 \Rightarrow 2$) For any $v \in V$, let $v = \sum_{i=1}^na_iv_i$. Then \begin{align*}
+    |G(v)|^2 &= \langle G(v),G(v)\rangle = \langle \sum_{i=1}^n a_iG(v_i),\sum_{i=1}^n a_iG(v_i)\rangle\\
+    &=\sum_{i=1}^n\sum_{i=1}^n a_ia_j\langle G(v_i),G(v_j)\rangle\\
+    &=\sum_{i=1}^n a_i^2\langle G(v_i),G(v_i)\rangle + \sum_{i\neq j; i,j\in{1,\dots, n}}a_ia_j\langle G(v_i),G(v_j)\rangle\\
+    &=\sum_{i=1}^n \lambda^2 a_i^2\langle v_i, v_j\rangle + 0\\
+    &=\lambda^2 \langle v,v\rangle = (|\lambda||v|)^2
+\end{align*}
+Hence, $|G(v)| = |\lambda||v|$.
+
+\subsection*{Question 16}
+Let $\mathbf{x}:U \subset R^2 \to R^3$, where \begin{align*}
+    U &=\{(\theta,\varphi)\in R^2:0<\theta<\pi,0<\varphi<2\pi\},\\
+    x(\theta,\varphi) &= (\sin{\theta}\cos{\varphi},\sin{\theta}\sin{\varphi},\cos{\theta}),
+\end{align*}
+be a parametrization of the unit sphere $S^2$. Let\begin{equation*}
+     \log\tan \frac{1}{2}\theta = u,\qquad \varphi = v
+\end{equation*}
+and show that a new parametrization of the coordinate neighborhood $\mathbf{x}(U)= V$ can be given by
+\begin{equation*}
+    \mathbf{y}(u,v) = (\text{sech } u\cos v,\text{sech } u\sin v,\tanh u).
+\end{equation*}
+Prove that in the parametrization $y$ the coefficients of the first fundamental form are \begin{equation*}
+    E=G=\text{sech}^2~u,\qquad F=0.
+\end{equation*}
+Thus, $\mathbf{y}^{-1} : V \subset S^2 \to R^2$ is a conformal map which takes the meridians and
+parallels of $S^2$ into straight lines of the plane. This is called \textit{Mercator's projection}.\\
+
+\textit{Solution.} We have \begin{equation*}
+    \theta = 2\arctan e^u, \qquad v = \varphi.
+\end{equation*} Hence,\begin{align*}
+    \mathbf{y}(u,v) &= \mathbf{x}(2\arctan e^u,v)\\
+    &=(\sin{2\arctan e^u}\cos{v},\sin{2\arctan e^u}\sin{v},\cos{2\arctan e^u})\\
+    &=(\text{sech }u\cos{v}, \text{sech }u\sin{v},\tanh u).
+\end{align*}
+Therefore, we have \begin{align*}
+    \mathbf{y}_u &= \langle -\tanh u \text{ sech }u\cos v, -\tanh u \text{ sech }u\sin v, 1 - \tanh^2 u \rangle\\
+    \mathbf{y}_v &= (-\text{sech }u\sin{v}, \text{sech }u\cos{v},0)\\
+    E &= |\mathbf{y}_u|^2 = \tanh^2 u \text{ sech}^2~u + (1-\tanh^2 u)^2\\
+    &= \tanh^2 u (1-\tanh^2 u) + (1-\tanh^2 u)^2\\
+    &= 1-\tanh^2 u = \text{sech}^2~u\\
+    G &= |\mathbf{y}_v|^2 = \text{sech}^2~u (\sin^2 u+\cos^2 u) = \text{sech}^2~u\\
+    F &= \tanh u \text{sech}^2~u\sin v\cos v - \tanh u \text{sech}^2~u\sin v\cos v = 0
+\end{align*}
+
+
+\end{document}
