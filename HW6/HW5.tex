@@ -12,6 +12,53 @@
 \hrule
 \bigskip
 \section{Section 4.2}
+
+\subsection*{Question 1}
+
+
+
+\subsection*{Question 4}
+
+
+
+\subsection*{Question 7}
+
+
+
+\subsection*{Question 10}
+
+Let \(S\) be a surface of revolution. Prove that the rotations about its axis are isometries of \(S\).
+
+\emph{Proof.}
+Suppose \(S\) is a surface formed by rotating around \(z\)-axis, let \(S\) be parametrised by
+\[ \mathbf{x}(u,v) = (\varphi(v)\cos u, \varphi(v)\sin u, \psi(v)) \]
+for some \(\varphi, \psi\).
+Then the rotation about \(z\)-axis by \(\theta\) can be given by
+\[ T = \begin{pmatrix}
+    \cos\theta & -\sin\theta & 0 \\
+    \sin\theta & \cos\theta & 0 \\
+    0 & 0 & 1
+\end{pmatrix}. \]
+§2-3 exercise 11 shows that \(T\) restricted to \(S\) is a diffeomorphism onto \(S\),
+we just need to show that it is a local isometry at every point.
+
+Now let \(\overline{\mathbf{x}} = T\circ\mathbf{x}\) and we can compute that
+\[ \overline{\mathbf{x}}(u,v) = (\varphi(v)\cos(u+\theta), \varphi(v)\sin(u+\theta), \psi(v)) \]
+Note that §2-3 Example 4 computes the coefficients of the first fundamental form of \(S\) as
+\[ E = \varphi^2,\quad F = 0,\quad G = (\varphi')^2 + (\psi')^2. \]
+We can compute \(\overline{E},\overline{F},\overline{G}\) by hand as
+\begin{align*}
+    \overline{\mathbf{x}}_u &= (-\varphi(v)\sin(u+\theta),\varphi(v)\cos(u+\theta), 0) \\
+    \overline{\mathbf{x}}_v &= (\varphi'(v)\cos(u+\theta),\varphi'(v)\sin(u+\theta), \psi'(v)) \\
+    \overline{E} &= \left\langle \overline{\mathbf{x}}_u, \overline{\mathbf{x}}_u \right\rangle \\
+                 &= \varphi^2 = E\\
+    \overline{F} &= \left\langle \overline{\mathbf{x}}_u, \overline{\mathbf{x}}_v \right\rangle \\
+                 &= 0 = F \\
+    \overline{G} &= \left\langle \overline{\mathbf{x}}_v, \overline{\mathbf{x}}_v \right\rangle \\
+                 &= (\varphi')^2 + (\psi')^2 = G
+\end{align*}
+Applying proposition 1 we have \(\overline{\mathbf{x}}\circ\mathbf{x} = T\) is a local isometry at some arbitrary point, which suffices.
+
 \subsection*{Question 13}
 Let $V$ and $W$ be (finite-dimensional) vector spaces with inner products $\langle ,\rangle$. Let $G: V \to W$ be a linear map. Prove that the following conditions are equivalent:
 \begin{enumerate}
