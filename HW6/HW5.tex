@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 %% Insert Commands in Preface.tex
+\usepackage{sagetex}
 \input{../Preface.tex}
 
 \begin{document}
@@ -19,7 +20,26 @@
 
 \subsection*{Question 4}
 
+Let us consider the stereographic projection $\pi: \mathbb R^2 \to S^2 \setminus{\textbf{N}} \subseteq \mathbb R^3$ where $\textbf{N}$ denotes the north pole.
+$$\pi(u, v) = \left(\frac{2u}{1 + u^2 + v^2}, \frac{2v}{1 + u^2 + v^2}, \frac{-1 + u^2 + v^2}{1 + u^2 + v^2} \right).$$
 
+Note that this is sufficient to show local conformality as we can rotate the sphere.
+\begin{sagesilent}
+    a,b,c,u,v = var('a,b,c,u,v')
+    c1 = 2*u/(1 + u^2 + v^2)
+    c2 = 2*v/(1 + u^2 + v^2)
+    c3 = (-1 + u^2 + v^2)/(1 + u^2 + v^2)
+\end{sagesilent}
+We had from previous homework that the local chart is a diffeomorphism and 
+\begin{enumerate}
+\item $\frac{ \partial x}{\partial u} = (\sage{diff(c1,u)}, \sage{diff(c2, u)}, \sage{diff(c3,u)})$ 
+\item $\frac{ \partial x}{\partial v} = (\sage{diff(c1,v)}, \sage{diff(c2, v)}, \sage{diff(c3,v)})$
+\item $E = \sage{(diff(c1,u)^2 + diff(c2,u)^2 + diff(c3,u)^2).full_simplify()}$
+\item $F = \sage{(diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c3,u)*diff(c3,v)).full_simplify()}$ 
+\item $G = \sage{(diff(c1,v)^2 + diff(c2,v)^2 + diff(c3,v)^2).full_simplify()}$
+\end{enumerate}
+
+As $E = G$ and $F = 0$, it is a conformal chart.
 
 \subsection*{Question 7}
 
@@ -38,15 +58,15 @@ Prove that the following conditions are equivalent:
     \item[d.] There exists an orthonormal basis \(\set{v_1,\dots,v_n}\) in \(V\) such that \(\set{F(v_1),\dots,F(v_n)}\) is an orthonormal basis in \(W\).
 \end{enumerate}
 
-\textbf{(a)\Rightarrow(b).} is obvious.
+\textbf{(a)$\Rightarrow$(b).} is obvious.
 
-\textbf{(a)\Rightarrow(c).} Assume (a), if \(\set{v_1,\dots,v_n}\) is an orthonormal basis in \(V\) then whenever \(i\ne j\),
+\textbf{(a)$\Rightarrow$(c).} Assume (a), if \(\set{v_1,\dots,v_n}\) is an orthonormal basis in \(V\) then whenever \(i\ne j\),
 \(0 = \inner{v_i,v_j} = \inner{F(v_i),F(v_j)}\) and furthermore for each \(i\), by (b) \(\abs{F(v_i)} = \abs{v_i}\).
 This shows \(\set{F(v_1),\dots,F(v_n)}\) is orthogonal set, for it to be a basis we need to assume in addition that \(V\) and \(W\) have the same dimension (so \(F\) is surjective).
 
-\textbf{(c)\Rightarrow(d).} is trivial as orthonormal bases can always be produced by Gram-Schmidt.
+\textbf{(c)$\Rightarrow$(d).} is trivial as orthonormal bases can always be produced by Gram-Schmidt.
 
-\textbf{(d)\Rightarrow(a).} Assume (d), let \(v,v'\in V\).
+\textbf{(d)$\Rightarrow$(a).} Assume (d), let \(v,v'\in V\).
 We can express them in our orthonormal basis as follows
 \begin{align*}
     v &= \sum_{i=1}^n c_i v_i,\\

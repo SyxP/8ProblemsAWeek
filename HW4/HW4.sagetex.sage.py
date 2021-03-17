@@ -55,7 +55,7 @@ except:
  _st_.goboom(_sage_const_32 )
 try:
  _st_.current_tex_line = _sage_const_33 
- _st_.inline(_sage_const_7 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()))
+ _st_.inline(_sage_const_7 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c3,u)*diff(c3,v)).full_simplify()))
 except:
  _st_.goboom(_sage_const_33 )
 try:
@@ -111,7 +111,7 @@ except:
  _st_.goboom(_sage_const_47 )
 try:
  _st_.current_tex_line = _sage_const_48 
- _st_.inline(_sage_const_16 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()))
+ _st_.inline(_sage_const_16 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c3,u)*diff(c3,v)).full_simplify()))
 except:
  _st_.goboom(_sage_const_48 )
 try:
@@ -167,7 +167,7 @@ except:
  _st_.goboom(_sage_const_62 )
 try:
  _st_.current_tex_line = _sage_const_63 
- _st_.inline(_sage_const_25 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()))
+ _st_.inline(_sage_const_25 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c3,u)*diff(c3,v)).full_simplify()))
 except:
  _st_.goboom(_sage_const_63 )
 try:
@@ -223,7 +223,7 @@ except:
  _st_.goboom(_sage_const_77 )
 try:
  _st_.current_tex_line = _sage_const_78 
- _st_.inline(_sage_const_34 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()))
+ _st_.inline(_sage_const_34 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c3,u)*diff(c3,v)).full_simplify()))
 except:
  _st_.goboom(_sage_const_78 )
 try:
@@ -293,7 +293,7 @@ except:
  _st_.goboom(_sage_const_101 )
 try:
  _st_.current_tex_line = _sage_const_102 
- _st_.inline(_sage_const_46 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c2,u)*diff(c2,v)).full_simplify()))
+ _st_.inline(_sage_const_46 , latex((diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c3,u)*diff(c3,v)).full_simplify()))
 except:
  _st_.goboom(_sage_const_102 )
 try:
