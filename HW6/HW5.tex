@@ -17,6 +17,26 @@
 \subsection*{Question 1}
 
 
+\begin{sagesilent}
+    a,b,c,u,v = var('a,b,c,u,v')
+    c1 = u*sin(a)*cos(v)
+    c2 = u*sin(a)*sin(v)
+    c3 = u*cos(a)
+\end{sagesilent}
+
+We have that
+\begin{enumerate}
+\item $\frac{ \partial x}{\partial u} = (\sage{diff(c1,u)}, \sage{diff(c2, u)}, \sage{diff(c3,u)})$ 
+\item $\frac{ \partial x}{\partial v} = (\sage{diff(c1,v)}, \sage{diff(c2, v)}, \sage{diff(c3,v)})$
+\item $E = \sage{(diff(c1,u)^2 + diff(c2,u)^2 + diff(c3,u)^2).full_simplify()}$
+\item $F = \sage{(diff(c1,u)*diff(c1,v) + diff(c2,u)*diff(c2,v) + diff(c3,u)*diff(c3,v)).full_simplify()}$ 
+\item $G = \sage{(diff(c1,v)^2 + diff(c2,v)^2 + diff(c3,v)^2).full_simplify()}$
+\end{enumerate}
+
+As $E \neq G$, it is not conformal and hence not a local isometry.
+
+To see that it is a local diffeomorphism onto a cone with angle $2\alpha$, observe that for any point $(u, v) \in \mathbb R^2$, construct the set $S = \{(x, y)| x > 0, v-\frac\pi2 \leq y < \frac\pi2\}$. Then $(u, v) \in S \subseteq \mathbb R^2$, and we had that $F|_S$ is a diffeomorphism from $S$ to the cone needed (we had seen this noting that $(u,v)$ is in polar coordinates where $u$ is the radius and $v$ the angle).
+
 
 \subsection*{Question 4}
 
@@ -25,7 +45,6 @@ $$\pi(u, v) = \left(\frac{2u}{1 + u^2 + v^2}, \frac{2v}{1 + u^2 + v^2}, \frac{-1
 
 Note that this is sufficient to show local conformality as we can rotate the sphere.
 \begin{sagesilent}
-    a,b,c,u,v = var('a,b,c,u,v')
     c1 = 2*u/(1 + u^2 + v^2)
     c2 = 2*v/(1 + u^2 + v^2)
     c3 = (-1 + u^2 + v^2)/(1 + u^2 + v^2)
