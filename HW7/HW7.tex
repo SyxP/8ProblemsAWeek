@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+%% Insert Commands in Preface.tex
+\input{.../Preface.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
+ 
+\smallskip
+\hrule
+\bigskip
+
+\section*{Question 1}
+
+\section*{Question 2}
+
+\section*{Question 3}
+Let $e_1,e_2$ be a basis of $T_p(S)$ and $X=X^1e_1+X^2e_2, Y=Y^1e_1+Y^2e_2$. express $[X,Y]$ in terms of $X^i, Y^i$ and $e_i$.
+\\
+\textit{Solution.} We assume $e_1$ and $e_2$ can be smoothly extended into tangent fields on $S$. Then we have
+\begin{align*}
+    \nabla_XY &= \nabla_{X^1e_1+X^2e_2}(Y^1e_1+Y^2e_2)\\
+    &=X^1\nabla_{e_1}Y^1e_1 + X^1\nabla_{e_1}Y^2e_2 +
+    X^2\nabla_{e_2}Y^1e_1 + X^2\nabla_{e_2}Y^2e_2\\
+    &=X^1Y^1\nabla_{e_1}e_1 + X^1Y^2\nabla_{e_1}e_2 +
+    X^2Y^1\nabla_{e_2}e_1 + X^2Y^2\nabla_{e_2}e_2\\
+    &~~+X^1e_1(Y^1)e_1 + X^1e_1(Y^2)e_2+ X^2e_2(Y^1)e_1+X^2e_2(Y^2)e_2;\\
+    \nabla_YX &= \nabla_{Y^1e_1+Y^2e_2}(X^1e_1+X^2e_2)\\
+    &=Y^1\nabla_{e_1}X^1e_1 + Y^1\nabla_{e_1}X^2e_2 +
+    Y^2\nabla_{e_2}X^1e_1 + Y^2\nabla_{e_2}X^2e_2\\
+    &=X^1Y^1\nabla_{e_1}e_1 + X^2Y^1\nabla_{e_1}e_2 +
+    X^1Y^2\nabla_{e_2}e_1 + X^2Y^2\nabla_{e_2}e_2\\
+    &~~+Y^1e_1(X^1)e_1 + Y^1e_1(X^2)e_2+ Y^2e_2(X^1)e_1+Y^2e_2(X^2)e_2;\\
+\end{align*}
+Therefore, $X^i,Y^j\neq 0$, we have \begin{align*}
+    [X,Y] &= \nabla_XY - \nabla_YX\\
+    &=(X^1Y^2\nabla_{e_1}e_2 +
+    X^2Y^1\nabla_{e_2}e_1)-(Y^1X^2\nabla_{e_1}e_2 +
+    Y^2X^1\nabla_{e_2}e_1)\\
+    &~~+[X^1e_1(Y^1)e_1 + X^1e_1(Y^2)e_2+ X^2e_2(Y^1)e_1+X^2e_2(Y^2)e_2]\\
+    &~~-[Y^1e_1(X^1)e_1 + Y^1e_1(X^2)e_2+ Y^2e_2(X^1)e_1+Y^2e_2(X^2)e_2]\\
+    &=\det\begin{pmatrix}
+         X^1&Y^1\\
+         X^2&Y^2
+    \end{pmatrix}[e_1,e_2]\\
+    &~~+[X^1e_1(Y^1)+X^2e_2(Y^1)-Y^1e_1(X^1)-Y^2e_2(X^1)]e_1\\
+    &~~+[X^1e_1(Y^2)+X^2e_2(Y^2)-Y^1e_1(X^2)-Y^2e_2(X^2)]e_2\\
+\end{align*}
+
+If $e_1 = \utilde{X}_u$ and $e_2 = \utilde{X}_v$, then we have $[e_1,e_2] = 0$ and hence
+\begin{align*}
+    [X,Y] &= [X^1e_1(Y^1)+X^2e_2(Y^1)-Y^1e_1(X^1)-Y^2e_2(X^1)]e_1\\
+    &+[X^1e_1(Y^2)+X^2e_2(Y^2)-Y^1e_1(X^2)-Y^2e_2(X^2)]e_2\\
+\end{align*}
+
+\end{document}
