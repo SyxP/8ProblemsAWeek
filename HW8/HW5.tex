@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+%% Insert Commands in Preface.tex
+\input{.../Preface.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape Huang Linhang; Syx Pek; Qi Ji} \hfill {\scshape \large Differential Geometry} \hfill {\scshape Homework \#2}
+ 
+\smallskip
+\hrule
+\bigskip
+
+\section*{Section 4.3}
+\subsection*{Question 2}
+
+\subsection*{Question 3}
+
+\subsection*{Question 7}
+
+\section*{Section 4.4}
+\subsection*{Question 1}
+
+\subsection*{Question 10}
+Show that the geodesic curvature of an oriented curve $C \subset S$ at a point $p \in C$ is equal to the curvature of the plane curve obtained by projecting $C$ onto the tangent plane $T_p(S)$ along the normal to the surface at $p$.\\
+
+\textit{Solution.} We parametrize $C$ by $\alpha(t)$ with $\alpha(0)=p$ and $|\alpha'(t)|=1$. Then the projection of 
+\begin{equation*}
+    \beta(t) = \alpha(t)-\alpha(0) - \langle\alpha(t)-\alpha(0),N\rangle N,
+\end{equation*}
+where $N$ is the unit normal of $T_p(S)$. Then we have\begin{align*}
+    \beta'(t) = \alpha'(t) - \langle\alpha'(t),N\rangle N,
+    \beta''(t) = \alpha''(t) - \langle\alpha''(t),N\rangle N.
+\end{align*} 
+This implies \begin{align*}
+    &\beta'(0) = \alpha'(0) - \langle\alpha'(0),N\rangle N = \alpha'(0),\\
+    &\beta''(t) = \alpha''(0) - \langle \alpha''(0),N\rangle N;\\
+    &\Rightarrow  \beta'(0)\cdot \beta''(0)= 0,\qquad |\beta'(0)|=1;\\
+    &\Rightarrow  \kappa_{\beta}(p) =  \frac{|\beta'(0)\times\beta''(0)|}{|\beta'(0)|^3}=|\beta''(0)|\\
+    &= \sqrt{|a''(0)|^2+\langle a''(0),N\rangle^2-2\langle a''(0),N\rangle^2}\\
+    &=\sqrt{\kappa_\alpha(p)^2-K^2}.
+\end{align*}
+
+\subsection*{Question 20}
+Let $T$ be a torus of revolution which we shall assume to be parametrized by \begin{equation*}
+    X(u, v)=((r\cos u+a)\cos v,(r\cos u+a)\sin v,r\sin u).
+\end{equation*}
+Prove that\\
+
+a. If a geodesic is tangent to the parallel $u = \pi/2$, then it is entirely contained in the region of $T$ given by\begin{equation*}
+    -\frac{\pi}{2}<u<\frac{\pi}{2}
+\end{equation*}
+
+b. A geodesic that intersects the parallel $u = 0$ under an angle $\theta (0< \theta < \pi/2)$ also intersects the parallel $u = \pi$ if \begin{equation*}
+    \cos \theta < \frac{a-r}{a+r}.
+\end{equation*}\\
+
+\textit{Solution}. 
+a. According to Clairaut's relation, given a geodesic $\alpha(t)\subset T$, we have \begin{equation*}
+    \frac{d}{dt} R(t)\cos\theta(t) = 0,
+\end{equation*}
+where $R(t)$ is the distance from $\alpha(t)$ to the $z$-axis and $\theta(t)$ is the angel made by $\alpha'(t)$ and $\mathcal{x}_u$. Suppose $\alpha(0)$ is the tangential point on $u = \pi/2$. Then \begin{equation*}
+    R(t)\theta(t) = R(0)\cos\theta(0)= a.
+\end{equation*}
+In particular, we have $R(t)\geq a$. Hence, $\alpha(t)$ has to lie on the outer side of $T$, which is the region with $-\pi/2<u<\pi/2$.\\
+
+b. Suppose $\alpha(0)$ is the intersection on $u = 0$. We have  \begin{equation*}
+    R(t)\theta(t) = R(0)\cos\theta(0) < (a+r)\cdot \frac{a-r}{a+r} = a-r.
+\end{equation*}
+Suppose $\alpha(t)$ does not intersect $u=\pi$. Let $k = \inf\{u_0\in (-\pi,\pi):\text{$\{u=u_0\}$ intersects $\alpha(t)$}\}$. By the continuity, $\alpha(t)$ will touch $\{u=k\}$ and therefore tangent to the parallel. Moreover, we can also see that $k\neq \pi$. Let the $\alpha(t_0)$ be a tangential point. Then we have \begin{equation*}
+    R(t_0)\cos\theta(t_0) = R(t_0) > a - r.
+\end{equation*}
+This contradicts the fact that $R(t)\cos\theta(t) < a-r$. Hence, 
+$\alpha(t)$ has to intersect $\{u=\pi\}$.
+
+\end{document}
