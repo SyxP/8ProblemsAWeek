@@ -53,6 +53,52 @@ When \(E = G = \lambda = (u^2+v^2+c)^{-2}\) and \(F = 0\),
 
 \subsection*{Question 3}
 
+Verify that the surfaces
+\begin{align*}
+    \mathbf{x}(u,v) &= (u\cos v, u\sin v, \log u), \\
+    \overline{\mathbf{x}}(u,v) &= (u\cos v, u\sin v, v),
+\end{align*}
+have equal Gaussian curvature at the points \(\mathbf{x}(u,v)\) and \(\overline{\mathbf{x}}(u,v)\)
+but that the mapping \(\overline{\mathbf{x}} \circ \mathbf{x}^{-1}\) is not an isometry.
+This shows that the ``converse'' of the Gauss theorem is not true.
+
+\emph{Solution.}
+We compute
+\begin{align*}
+    \mathbf{x}_u &= \left( \cos v, \sin v, \frac1u \right) \\
+    \mathbf{x}_v &= \left( -u \sin v, u\cos v, 0 \right) \\
+    E &= \left\langle \mathbf{x}_u, \mathbf{x}_u \right\rangle \\
+      &= 1 + \frac1{u^2} \\
+    F &= \left\langle \mathbf{x}_u, \mathbf{x}_v \right\rangle \\
+      &= 0 \\
+    G &= \left\langle \mathbf{x}_v, \mathbf{x}_v \right\rangle \\
+      &= u^2 \\
+    \overline{\mathbf{x}}_u &= \left( \cos v, \sin v, 0 \right) \\
+    \overline{\mathbf{x}}_v &= \left( -u \sin v, u\cos v, 1 \right) \\
+    \overline{E} &= \left\langle \overline{\mathbf{x}}_u, \overline{\mathbf{x}}_u \right\rangle \\
+                 &= 1 \\
+    \overline{F} &= \left\langle \overline{\mathbf{x}}_u, \overline{\mathbf{x}}_v \right\rangle \\
+                 &= 0 \\
+    \overline{G} &= \left\langle \overline{\mathbf{x}}_v, \overline{\mathbf{x}}_v \right\rangle \\
+                 &= u^2 + 1
+\end{align*}
+Now as \(F = \overline{F} = 0\), we can simplify the checking of \(K = \overline{K}\) by applying the formula in exercise 1.
+We compute
+\[ EG = u^2 + 1 = \overline{EG} \]
+and
+\[ E_v = 0 = \overline{E}_v \]
+and
+\[ G_u = 2u = \overline{G}_u \]
+which shows the two surfaces have the same Gaussian curvature.
+
+To see that \(\overline{\mathbf{x}} \circ \mathbf{x}^{-1}\) is not an isometry,
+consider this curve
+\[ \alpha(t) = \mathbf{x}(t,\pi) = (-t, 0, \log t),\quad 1<t<2 \]
+note that
+\[ \overline{\mathbf{x}} \circ \mathbf{x}^{-1} \circ \alpha(t) = \overline{\mathbf{x}}(t,\pi) = (-t, 0, \pi). \]
+We can compute and check that \(\overline{\mathbf{x}} \circ \mathbf{x}^{-1}\) fails to preserve the arc length of this curve.
+
+
 \subsection*{Question 7}
 
 \section*{Section 4.4}
