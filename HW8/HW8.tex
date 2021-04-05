@@ -15,6 +15,42 @@
 \section*{Section 4.3}
 \subsection*{Question 2}
 
+\newcommand*{\pdd}[2]{\frac{\partial #1}{\partial #2}}
+\let\phi\varphi
+
+Show that if \(\mathbf{x}\) is an isothermal parametrization, that is,
+\(E = G = \lambda(u,v)\) and \(F = 0\), then
+\[ K = -\frac{1}{2\lambda}\Delta(\log\lambda), \]
+where \(\Delta\phi\) denotes the Laplacian
+\(\pdd{^2\phi}{u^2} + \pdd{^2\phi}{v^2}\) of the function \(\phi\).
+Conclude that when \(E = G = (u^2+v^2+c)^{-2}\) and \(F = 0\), then \(K = \text{const.} = 4c\).
+
+\emph{Proof.}
+As \(F = 0\), \(\mathbf{x}\) is orthogonal, so we can apply the formula from the previous exercise, which is
+\[ K = -\frac{1}{2\sqrt{EG}} \left\{
+        \left( \frac{E_v}{\sqrt{EG}} \right)_v +
+        \left( \frac{E_u}{\sqrt{EG}} \right)_u
+\right\}. \]
+Note that \(\sqrt{EG} = \lambda\), also
+\begin{align*}
+    \left( \frac{E_v}{\sqrt{EG}} \right)_v + \left( \frac{E_u}{\sqrt{EG}} \right)_u
+    &= \left( \frac{\lambda_v}{\lambda} \right)_v + \left( \frac{\lambda_u}{\lambda} \right)_u \\
+    &= \left( \pdd{\log\lambda}{v} \right)_v + \left( \pdd{\log\lambda}{u} \right)_u \\
+    &= \Delta(\log \lambda)
+\end{align*}
+which completes the proof.
+
+When \(E = G = \lambda = (u^2+v^2+c)^{-2}\) and \(F = 0\),
+\begin{align*}
+    \log\lambda &= -2 \log (u^2+v^2+c) \\
+    \pdd{\log\lambda}{u} &= -4 \frac{u}{u^2+v^2+c} \\
+    \pdd{^2\log\lambda}{u^2} &= -4 \frac{u^2 + v^2 + c - 2u^2}{(u^2+v^2+c)^2} \\
+                             &= -4\lambda (-u^2 + v^2 + c) \\
+    \pdd{^2\log\lambda}{v^2} &= -4\lambda ( u^2 - v^2 + c) \\
+    \Delta(\log\lambda) &= -4\lambda(2c) = -8c\lambda \\
+    K &= -\frac{1}{2\lambda}\Delta(\log\lambda) = 4c.
+\end{align*}
+
 \subsection*{Question 3}
 
 \subsection*{Question 7}
