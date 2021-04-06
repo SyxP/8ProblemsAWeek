@@ -101,9 +101,31 @@ We can compute and check that \(\overline{\mathbf{x}} \circ \mathbf{x}^{-1}\) fa
 
 \subsection*{Question 7}
 
+Does there exists a surface with $E = 1$, $F = 0$ and $G = \cos(u)^2$, and 
+$e = \cos(u)^2$, $f = 0$ and $g = 1.$
+
+\textit{Solution.} No. Observe that the Codazzi-Gauss-Mainardi equation states
+$$M_v - N_u = \Gamma^1_{22}L + \Gamma^2_{22}M - \Gamma^1_{12}M - \Gamma^2_{12}N.$$
+Substituting, this says, ${-\sin(u)(\cos(u)^3 + 1)} = 0$, which is a contradiction.
+
+
 \section*{Section 4.4}
 \subsection*{Question 1}
 
+\begin{enumerate}[(a)]
+    \item Let the curve be given an arc-length parameterization
+ as $c(s): [0,1] \to C \subseteq S.$
+Our goal is to show that $c'''$ is a linear 
+combination of $c'$ and $c''$. This would imply that the torsion vanishes, and hence a plane curve.
+As $c$ is a geodesic, $c''$ is parallel to the unit normal $\tilde{N}$. 
+Moreover as $c$ is a line of curvature, $\frac{\mathrm d\tilde{N}}{\mathrm ds} = -\kappa c$. Combining this gives our result.
+
+\item Conversely, we have that $c'''$ is a linear combination, and we wish to show
+that $\frac{\mathrm dc''}{\mathrm ds} = -\kappa c.$ This can be seen by reversing the argument above.
+
+\item Pick our surface as a plane, then all such lines of curvatures are necessarily planar, but not necessarily a geodesic (straight line).
+
+\end{enumerate}
 \subsection*{Question 10}
 Show that the geodesic curvature of an oriented curve $C \subset S$ at a point $p \in C$ is equal to the curvature of the plane curve obtained by projecting $C$ onto the tangent plane $T_p(S)$ along the normal to the surface at $p$.\\
 
