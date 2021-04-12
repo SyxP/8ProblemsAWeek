@@ -126,6 +126,7 @@ that $\frac{\mathrm dc''}{\mathrm ds} = -\kappa c.$ This can be seen by reversin
 \item Pick our surface as a plane, then all such lines of curvatures are necessarily planar, but not necessarily a geodesic (straight line).
 
 \end{enumerate}
+
 \subsection*{Question 10}
 Show that the geodesic curvature of an oriented curve $C \subset S$ at a point $p \in C$ is equal to the curvature of the plane curve obtained by projecting $C$ onto the tangent plane $T_p(S)$ along the normal to the surface at $p$.\\
 
@@ -139,11 +140,11 @@ where $N$ is the unit normal of $T_p(S)$. Then we have\begin{align*}
 \end{align*} 
 This implies \begin{align*}
     &\beta'(0) = \alpha'(0) - \langle\alpha'(0),N\rangle N = \alpha'(0),\\
-    &\beta''(t) = \alpha''(0) - \langle \alpha''(0),N\rangle N;\\
-    &\Rightarrow  \beta'(0)\cdot \beta''(0)= 0,\qquad |\beta'(0)|=1;\\
-    &\Rightarrow  \kappa_{\beta}(p) =  \frac{|\beta'(0)\times\beta''(0)|}{|\beta'(0)|^3}=|\beta''(0)|\\
-    &= \sqrt{|a''(0)|^2+\langle a''(0),N\rangle^2-2\langle a''(0),N\rangle^2}\\
-    &=\sqrt{\kappa_\alpha(p)^2-K^2}.
+    &\beta''(0) = \alpha''(0) - \langle \alpha''(0),N\rangle N;\\
+    \Rightarrow  \beta''(0) &= \langle \alpha''(0),R_{90^\circ}\alpha'(0)\rangle R_{90^\circ}\alpha'(0),\\ 
+    \Rightarrow  k_\beta &= \langle \beta''(0), R_{90^\circ}\beta'(0)\rangle \\
+    &= \langle \beta''(0), R_{90^\circ}\alpha'(0)\rangle\\
+    &= \langle \alpha''(0), R_{90^\circ}\alpha'(0)\rangle = k_g.
 \end{align*}
 
 \subsection*{Question 20}
